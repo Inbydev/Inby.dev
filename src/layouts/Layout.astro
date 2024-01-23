@@ -17,6 +17,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<div class="icon-load" id="icon-load">
+			<h2>Inby</h2>
+			<h3>Cargando..</h3>
+		</div>
 		<slot />
 	</body>
 </html>
@@ -29,9 +33,9 @@ const { title } = Astro.props;
 	@font-face {
 		font-family: "Concert One";
 		src:
-			url("../FONTS/ConcertOne-Regular.woff2") format("woff2"),
-			url("../FONTS/ConcertOne-Regular.woff") format("woff"),
-			url("../FONTS/ConcertOne-Regular.ttf") format("truetype");
+			url("../src/FONTS/ConcertOne-Regular.woff2") format("woff2"),
+			url("../src/FONTS/ConcertOne-Regular.woff") format("woff"),
+			url("../src/FONTS/ConcertOne-Regular.ttf") format("truetype");
 		font-style: normal;
 		font-weight: normal;
 		font-display: swap;
@@ -40,9 +44,9 @@ const { title } = Astro.props;
 	@font-face {
 		font-family: "Great Vibes";
 		src:
-			url("../FONTS/GreatVibes-Regular.woff2") format("woff2"),
-			url("../FONTS/GreatVibes-Regular.woff") format("woff"),
-			url("../FONTS/GreatVibes-Regular.ttf") format("truetype");
+			url("../src/FONTS/GreatVibes-Regular.woff2") format("woff2"),
+			url("../src/FONTS/GreatVibes-Regular.woff") format("woff"),
+			url("../src/FONTS/GreatVibes-Regular.ttf") format("truetype");
 		font-style: normal;
 		font-weight: normal;
 		font-display: swap;
@@ -88,6 +92,7 @@ const { title } = Astro.props;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column;
 		opacity: 1;
 		transition: var(--h-s);
 		background: var(--background);

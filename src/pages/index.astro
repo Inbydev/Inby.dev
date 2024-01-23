@@ -1,19 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Background from "../components/Background.astro";
+
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<main></main>
+<Layout title="Inbydev">
+	<Background>
+	<Header>
+	<main>
+		
+	</main>
 </Layout>
 
 <style>
 	@font-face {
 		font-family: "Shizuru";
 		src:
-			url("../FONTS/Shizuru-Regular.woff2") format("woff2"),
-			url("../FONTS/Shizuru-Regular.woff") format("woff"),
-			url("../FONTS/Shizuru-Regular.ttf") format("truetype");
+			url("../src/FONTS/Shizuru-Regular.woff2") format("woff2"),
+			url("../src/FONTS/Shizuru-Regular.woff") format("woff"),
+			url("../src/FONTS/Shizuru-Regular.ttf") format("truetype");
 		font-style: normal;
 		font-weight: normal;
 		font-display: swap;
@@ -22,9 +29,9 @@ import Header from "../components/Header.astro";
 	@font-face {
 		font-family: "Single Day";
 		src:
-			url("../FONTS/SingleDay-Regular.woff2") format("woff2"),
-			url("../FONTS/SingleDay-Regular.woff") format("woff"),
-			url("../FONTS/SingleDay-Regular.ttf") format("truetype");
+			url("../src/FONTS/SingleDay-Regular.woff2") format("woff2"),
+			url("../src/FONTS/SingleDay-Regular.woff") format("woff"),
+			url("../src/FONTS/SingleDay-Regular.ttf") format("truetype");
 		font-style: normal;
 		font-weight: normal;
 		font-display: swap;
