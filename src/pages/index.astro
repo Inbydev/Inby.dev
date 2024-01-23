@@ -1,40 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="Inby ❤">
-	<section class="home" id="home">
-		<h1>Inby</h1>
-		<div class="homepage">
-			<h2 class="h2__title">Desarrollador <span>UI</span> & <span>UX</span></h2>
-			<h3>Ve abajo!</h3>
-		</div>
-	</section>
 
-	<section class="about__container detector" id="about">
-		<div class="about">
-			<p class="p__start">Desarrollador <span>Full Stack</span> de HTML, CSS, JS y PHP
-				con <span>1 año</span> de experiencia y creador del proyecto InNotesBy.
-				<a class="more__info" href="sobre-nosotros.php"> más información aquí:</a>
-			</p>
-		</div>
-		<div class="about">
-			<p>Tecnologías que se ocupar</p>
-			<nav class="content"></nav>
-		</div>
-	</section>
-
-	<section class="proyects__section detector" id="proyects">
-		<h2>Proyectos</h2>
-		<div class="proyects__container">
-			<a class="proyects__link" href="#">
-				<h3 class="proyects__h4">InNotesBy</h3>
-			</a>
-			<a class="proyects__link" href="#">
-				<h3 class="proyects__h4">InSuccessBy</h3>
-			</a>
-		</div>
-	</section>
+	<Header />
+	<main>
+		<section class="home" id="home">
+			<h1>Inbydev</h1>
+			<div class="homepage">
+				<h2 class="h2__title">Desarrollador <span>UI</span> & <span>UX</span></h2>
+				<h3>Ve abajo!</h3>
+			</div>
+		</section>
+	
+		<section class="about__container detector" id="about">
+			<div class="about">
+				<p class="p__start">Desarrollador <span>Full Stack</span> de HTML, CSS, JS y PHP
+					con <span>1 año</span> de experiencia y creador del proyecto InNotesBy.
+					<a class="more__info" href="sobre-nosotros"> más información aquí:</a>
+				</p>
+			</div>
+			<div class="about">
+				<p>Tecnologías que se ocupar</p>
+				<nav class="content"></nav>
+			</div>
+		</section>
+	
+		<section class="proyects__section detector" id="proyects">
+			<h2>Proyectos</h2>
+			<div class="proyects__container">
+				<a class="proyects__link" href="#">
+					<h3 class="proyects__h4">InNotesBy</h3>
+				</a>
+				<a class="proyects__link" href="#">
+					<h3 class="proyects__h4">InSuccessBy</h3>
+				</a>
+			</div>
+		</section>
+	</main>
 </Layout>
 
 <style>

@@ -34,15 +34,12 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Background />
-		<Header />
 		<div class="icon-load" id="icon-load">
 			<h2>Inby</h2>
 			<h3>Cargando..</h3>
 		</div>
 
-		<main>
-			<slot />
-		</main>
+		<slot />
 
 		<Footer />
 
