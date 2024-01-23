@@ -40,7 +40,29 @@ import Header from "../components/Header.astro";
 			</div>
 		</section>
 	</main>
+
+	<script type="module" src="/src/JS/TagCloud.min.js"></script>
+	<script type="module" src="/src/JS/TagCloud.js"></script>
 </Layout>
+
+<style is:inline>
+	.tagcloud {
+		font-size: var(--fs-tag);
+		line-height: var(--lh-tag);
+	}
+
+	.tagcloud--item {
+		padding: 2px 4px;
+		cursor: pointer;
+		color: var(--secondary-text);
+		transition: 0.1s;
+	}
+
+	.tagcloud--item:hover {
+		opacity: 1 !important;
+		z-index: 100 !important;
+	}
+</style>
 
 <style>
 	@font-face {
@@ -177,22 +199,6 @@ import Header from "../components/Header.astro";
 	.content {
 		display: flex;
 		justify-content: center;
-	}
-
-	.tagcloud {
-		font-size: var(--fs-tag);
-		line-height: var(--lh-tag);
-	}
-
-	.tagcloud--item {
-		padding: 2px 4px;
-		cursor: pointer;
-		color: var(--secondary-text);
-	}
-
-	.tagcloud--item:hover {
-		opacity: 1 !important;
-		z-index: 100 !important;
 	}
 
 	@media (max-width: 1045px) {

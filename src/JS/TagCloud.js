@@ -4,8 +4,13 @@ var texts = [
     'JavaScript',
     'Python',
     'PHP',
+    'Astro',
+    'SQLite',
+    'Markdown',
 ];
+
 var tc = TagCloud('.content', texts, {
     maxSpeed: 'fast',
-    initSpeed: 'fast'
+    initSpeed: 'fast',
+    radius: '160'
 });

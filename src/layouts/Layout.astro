@@ -46,8 +46,6 @@ const { title } = Astro.props;
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 		<script src="/src/JS/loader.js"></script>
-		<script src="/src/JS/tagcloud.min.js"></script>
-		<script src="/src/JS/tagcloud-function.js"></script>
 	</body>
 </html>
 <style is:global>
@@ -105,12 +103,15 @@ const { title } = Astro.props;
 
 	footer {
 		background: var(--background-header);
-		height: 2.4em;
-	}
+		display: grid;
+		place-content: center;
+		padding: .4em 0;
+}
 
 	footer p {
-		font-size: 1.6em;
+		font-size: 1.4em;
 		line-height: 1em;
+		padding: 0;
 	}
 
 	.icon-load {
@@ -347,7 +348,23 @@ const { title } = Astro.props;
 	}
 
 	header .header__box .header__items .header__link .header__logo {
-		height: calc(11dvh * 0.94);
+		font-size: 70px;
+		font-family: "Great Vibes";
+		margin-right: 50px;
+		padding: 0 15px;
+		background: linear-gradient(to right, var(--primary-text), var(--secondary-text));
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		transition: background 0.2s ease-in-out;
+	}
+
+	header .header__box .header__items .header__link .header__logo:hover {
+		background: linear-gradient(to right, var(--secondary-text), var(--tertiary-text));
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		transition: background 0.2s ease-in-out;
 	}
 
 	.header__mobile__container {
@@ -514,13 +531,13 @@ const { title } = Astro.props;
 		}
 	}
 
-	@media (max-width: 374px) {
+	@media (max-width: 401px) {
 		h1::before {
-			inset: 42svh 4em 0 0;
+			inset: 43svh 4em 0 0 !important;
 		}
 
 		h1::after {
-			inset: 43svh 0 0 5.4em;
+			inset: 43.6vh 0 0 5.4em !important;
 		}
 	}
 </style>

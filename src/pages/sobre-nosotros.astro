@@ -40,7 +40,7 @@ import Header from "../components/HeaderAbout.astro";
 		</article>
 
 		<article id="thanks">
-			<h1 class="agradecimientos"><span>Agradecimientos especiales a:</span></h1>
+			<h2><span>Agradecimientos especiales a:</span></h2>
 			<div class="cardss">
 				<div class="cardn">
 					<span></span>
@@ -145,11 +145,12 @@ import Header from "../components/HeaderAbout.astro";
 		max-width: 50em;
 	}
 
-	article h1 {
-		font-size: 2em;
+	article h2 {
+		font-size: 4rem;
+		font-family: "Great Vibes";
 	}
 
-	article h1 span{
+	article h2 span{
 		background: linear-gradient(315deg, #00ccff, #d400d4);
 		color: transparent;
 		-webkit-background-clip: text;
@@ -303,6 +304,7 @@ import Header from "../components/HeaderAbout.astro";
 	.cardss .cardn .card_content h2 {
 		position: absolute;
 		font-size: 4em;
+		font-family: "Concert One";
 		z-index: 1;
 		opacity: 0;
 		transition: var(--a-s);

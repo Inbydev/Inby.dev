@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  TagCloud:
+    specifier: ^2.4.0
+    version: 2.4.0
   astro:
     specifier: ^4.2.3
     version: 4.2.3
@@ -730,6 +733,10 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+    dev: false
+
+  /TagCloud@2.4.0:
+    resolution: {integrity: sha512-6pgpqa+0WibWNxoNR+uggf7KziPFtgdkz0AQwMkvwgetTTwSV3JUuhbOselsXO9HEYzZ7oD9d92hQ2ksuz2Zfg==}
     dev: false
 
   /acorn@8.11.3:
