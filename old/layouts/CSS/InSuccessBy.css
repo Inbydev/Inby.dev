@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'Chivo';
+    src:
+        url('../FONTS/Chivo-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+:root {
+    --text: #e3ddee;
+    --background: rgb(9, 9, 19);
+    --primary: rgb(170, 190, 185);
+    --primary-opacity: rgba(170, 190, 185, .2);
+    --secondary: rgb(79, 75, 97);
+    --secondary-opacity: rgb(16, 16, 27);
+    --secondary-dark: rgba(59, 55, 77, .3);
+    --accent: #32ebbb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Chivo';
+    background: var(--background);
+    color: var(--text);
+    padding: 0;
+    margin: 0;
+}
+
+#toggle_container {
+    inset: 0;
+    position: fixed;
+    display: flex;
+    width: 18svw;
+    min-width: 20rem;
+    transition: transform .5s ease;
+    transform: translateX(calc(-100% + 2.4rem));
+    z-index: 1;
+}
+
+#toggle_container.hide {
+    transform: translateX(0);
+}
+
+#toggleButton {
+    background: var(--secondary);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 2.4rem;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toggleButton svg {
+    height: 1.8rem;
+}
+
+#toggleButton svg path {
+    stroke: var(--accent);
+}
+
+#toggle_container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: var(--secondary);
+}
+
+form label {
+    background: var(--secondary-dark);
+    border-radius: 6px;
+    text-decoration: none;
+    width: 100%;
+    border-bottom: 1px solid var(--primary);
+    padding: 0 .3rem;
+}
+
+form h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+form input,
+form select {
+  width: 94%;
+  background: none;
+  color: var(--accent);
+  font-size: 1rem;
+  height: 2.8rem;
+  border: none;
+  outline: none;
+}
+
+form input[disabled] {
+    cursor: not-allowed;
+}
+
+form button {
+  aspect-ratio: 3;
+  height: 3rem;
+  background: var(--primary-opacity);
+  color: var(--text);
+  border-radius: 6px;
+  border: 2px solid var(--accent);
+  font-family: 'Chivo';
+}
+
+
+
+main {
+  display: grid;
+  align-items: center;
+}
+
+h1, h2 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+h1 {
+  justify-content: center;
+  padding: .4rem 0;
+  font-size: 1.6rem;
+  background: var(--secondary-opacity);
+}
+
+.fixed {
+  position: sticky;
+  inset: 0 auto auto auto;
+  width: 100%;
+}
+
+.mostrarCategorias_box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .6em;
+    padding: .6rem;
+    background: var(--secondary-opacity);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.mostrarCategorias_box h2 {
+  font-size: 1rem;
+  padding: 0;
+}
+
+.mostrarCategorias_box a {
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1rem;
+    padding: .5rem .7rem;
+    border-radius: 8px;
+    background: var(--primary-opacity);
+    border: 2px solid var(--accent);
+    transition: .1s ease;
+}
+
+.mostrarCategorias_box a.all {
+  --accent: #32b7eb;
+}
+
+.mostrarCategorias_box a:hover {
+    background: var(--secondary);
+}
+
+.fixed h2.challenge {
+  padding: 1.334rem 0 1.334rem 0;
+  font-size: 1.4rem;
+  background: linear-gradient(180deg, var(--background) 80%, transparent);
+}
+
+.mostrarLogros_box {  
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 16rem);
+    padding: 0 2rem 1rem 2rem;
+    gap: 2rem;
+}
+
+.logros_box {
+    width: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6em;
+    padding: 1.5rem .6rem;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.logros_box p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0;
+}
+
+.logros_box svg {
+    flex-shrink: 0;
+    width: 2em;
+    aspect-ratio: 1;
+}
+
+.logros_box svg path {
+  text-decoration-color: var(--secondary);
+  color: var(--secondary);
+  fill: var(--secondary);
+}
+
+.logros_box.complete {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.logros_box.complete svg {
+    --secondary: var(--accent);
+}
