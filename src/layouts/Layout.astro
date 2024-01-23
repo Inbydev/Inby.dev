@@ -352,19 +352,16 @@ const { title } = Astro.props;
 		font-family: "Great Vibes";
 		margin-right: 50px;
 		padding: 0 15px;
-		background: linear-gradient(to right, var(--primary-text), var(--secondary-text));
+		background: linear-gradient(to right, var(--primary-text), var(--secondary-text), var(--tertiary-text));
 		-webkit-background-clip: text;
 		background-clip: text;
+		background-size: 200%;
 		color: transparent;
-		transition: background 0.2s ease-in-out;
+		transition: background 0.2s ease;
 	}
 
 	header .header__box .header__items .header__link .header__logo:hover {
-		background: linear-gradient(to right, var(--secondary-text), var(--tertiary-text));
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-		transition: background 0.2s ease-in-out;
+		background-position-x: -177px;
 	}
 
 	.header__mobile__container {
@@ -417,7 +414,25 @@ const { title } = Astro.props;
 		.header__mobile__items
 		.header__mobile__link
 		.header__mobile__logo {
-		height: calc(60px * 0.94);
+			font-size: 44px;
+			font-family: "Great Vibes";
+			margin-top: 3px;
+			padding: 0;
+			background: linear-gradient(to right, var(--primary-text), var(--secondary-text), var(--tertiary-text));
+			-webkit-background-clip: text;
+			background-clip: text;
+			background-size: 200%;
+			color: transparent;
+			transition: background 0.2s ease;
+	}
+
+	
+	.header__mobile__container
+		.header__mobile
+		.header__mobile__items
+		.header__mobile__link
+		.header__mobile__logo:hover {
+			background-position-x: -90px;
 	}
 
 	.header__mobile__container
