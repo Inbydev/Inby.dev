@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/HeaderAbout.astro";
+import Footer from '../components/Footer.astro';
+import Agradecimientos from "../components/Agradecimientos.astro";
 ---
 
 <Layout title="Inby ❤">
@@ -32,85 +34,22 @@ import Header from "../components/HeaderAbout.astro";
 	</main>
 
 	<section>
-		<article id="about">
+		<section class="subsection" id="about">
 			<h2>Sobre nosotros</h2>
 			<p>Nuestra historia comenzó a principios del año 2022 por mi, Infi. Lo que en un principio fue simplemente un intento por aprender algo nuevo, se convirtió en una maravilla para nosotros. Me encantó lo genial que era el Front-end y el Back-end y las nuevas tecnologías que han salido en cada una.</p>
 			<p>Para mi Aliceki es de las personas que más me a apoyado en este camino, por eso la incluyo en este proyecto. Sin el apoyo de ella, lo más probable es que nada de esto lo habría podido lograr.</p>
 			<p>Este proyecto no solo es un testimonio de nuestro crecimiento y dedicación, sino también de las relaciones significativas que hemos construido en el camino. ¡Bienvenido a lo que con mucho amor hemos creado!</p>
-		</article>
+		</section>
 
-		<article id="thanks">
+		<section class="subsection" id="thanks">
 			<h2><span>Agradecimientos especiales a:</span></h2>
-			<div class="cardss">
-				<div class="cardn">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<div class="card_content">
-						<h2>01</h2>
-						<h3>Aliceki</h3>
-						<p>Por estar aquí desde el principio y apoyarme en esto en todo momento <3. </p>
-					</div>
-				</div>
-				<div class="cardn">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<div class="card_content">
-						<h2>02</h2>
-						<h3>Fredoist</h3>
-						<p>por ayudarme con un problema que tenía mi header, además de ayudarme con un problema de la barra de scroll, gracias!</p>
-					</div>
-				</div>
-				<div class="cardn">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<div class="card_content">
-						<h2>03</h2>
-						<h3>Abizahir Romero</h3>
-						<p>Ayudo a entender mejor mi código, entender porque la semántica es importante y a ver algo que yo no podía ver.</p>
-					</div>
-				</div>
-				<div class="cardn">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<div class="card_content">
-						<h2>04</h2>
-						<h3>Mamá</h3>
-						<p>Por apoyarme en mi pasión.</p>
-					</div>
-				</div>
-				<div class="cardn">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<div class="card_content">
-						<h2>05</h2>
-						<h3>Cosmo</h3>
-						<p>Por ayudarme a arreglar el error de la fuente cortada, entender mejor el error y ayudarme con un error de scroll horizontal.</p>
-					</div>
-				</div>
-				<div class="cardn">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<div class="card_content">
-						<h2>06</h2>
-						<h3>Darío Valenzuela</h3>
-						<p>Por intentar ayudarme con la fuente y probar mi página InNotesBy dándome feedback.</p>
-					</div>
-				</div>
+			<div class="cards_container">
+				<Agradecimientos />
 			</div>
-		</article>
+		</section>
 	</section>
+
+	<Footer slot="Footer"/>
 </Layout>
 
 <style>
@@ -130,7 +69,7 @@ import Header from "../components/HeaderAbout.astro";
 		display: inline-table;
 	}
 
-	article {
+	.subsection {
 		margin-top: 80px;
 		display: flex;
 		justify-content: center;
@@ -141,16 +80,16 @@ import Header from "../components/HeaderAbout.astro";
 		gap: 1em;
 	}
 
-	article:first-child {
+	.subsection:first-child {
 		max-width: 50em;
 	}
 
-	article h2 {
+	.subsection h2 {
 		font-size: 4rem;
 		font-family: "Great Vibes";
 	}
 
-	article h2 span{
+	.subsection h2 span{
 		background: linear-gradient(315deg, #00ccff, #d400d4);
 		color: transparent;
 		-webkit-background-clip: text;
@@ -158,14 +97,14 @@ import Header from "../components/HeaderAbout.astro";
 		display: inline-table;
 	}
 
-	article p {
+	.subsection p {
 		font-size: clamp(20px, 7vw, 24px);
 		line-height: clamp(32px, 7vw, 36px);
 		text-align: start;
 		margin-bottom: 1em;
 	}
 
-	main,article[id] {
+	main,.subsection[id] {
 		scroll-margin-top: 16dvh;
 	}
 
@@ -256,196 +195,8 @@ import Header from "../components/HeaderAbout.astro";
 		font-size: 0.75em;
 	}
 
-
-
-	.cardss {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-	}
-	.cardss .cardn {
-		position: relative;
-		opacity: 0.4;
-		transition: 0.2s;
-		width: 300px;
-		height: 400px;
-		background: var(--background);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 30px;
-		box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-		overflow: hidden;
-		
-	}
-
-	.cardss .cardn:hover {
-		opacity: 1;
-	}
-
-	.cardss .cardn::before {
-		content: '';
-		position: absolute;
-		top: 2px;
-		left: 2px;
-		bottom: 2px;
-		width: 50%;
-		background: rgba(255,255,255,0.1);
-		pointer-events: none;
-	}
-
-	.cardss .cardn .card_content {
-		padding: 30px;
-		text-align: center;
-	}
-
-	.cardss .cardn .card_content h2 {
-		position: absolute;
-		font-size: 4em;
-		font-family: "Concert One";
-		z-index: 1;
-		opacity: 0;
-		transition: var(--a-s);
-		color: var(--other);
-		right: 30px;
-		top: 30%;
-	}
-
-	.cardss .cardn:hover .card_content h2 {
-		opacity: 1;
-		transform: translateY(-110%);
-	}
-
-	.cardss .cardn .card_content h3 {
-		position: relative;
-		font-size: 1.5em;
-		font-weight: 800;
-		color: #FFF;
-		z-index: 2;
-		opacity: 0.5;
-		letter-spacing: 1px;
-		transition: 0.5s;
-	}
-
-	.cardss .cardn:hover .card_content h3,
-	.cardss .cardn:hover .card_content p{
-		opacity: 1;
-	}
-
-	.cardss .cardn .card_content p {
-		position: relative;
-		text-align: center;
-		font-size: 1em;
-		font-weight: 300;
-		color: #FFF;
-		z-index: 2;
-		opacity: 0.5;
-		transition: 0.5s;
-	}
-
-	.cardss .cardn .card_content a {
-		display: inline-block;
-		margin-top: 15px;
-		padding: 8px 15px;
-		background: #FFF;
-		color: #0c002b;
-		text-decoration: none;
-		text-transform: uppercase;
-		font-weight: 600;
-	}
-
-	.cardss .cardn span {
-		transition: 0.5s;
-		opacity: 0;
-	}
-
-
-	.cardss .cardn:hover span {
-		opacity: 1;
-	}
-
-
-
-	.cardss .cardn span:nth-child(1) {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 100%;
-		height: 3px;
-		background: linear-gradient(to right, transparent, #1799ff);
-		animation: animate1 2s linear infinite;
-	}
-
-	@keyframes animate1
-	{
-		0% {transform: translateX(-100%);}
-		100% {transform: translateX(100%);}
-	}
-
-
-
-
-	.cardss .cardn span:nth-child(2) {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 3px;
-		height: 100%;
-		background: linear-gradient(to bottom, transparent, #1799ff);
-		animation: animate2 2s linear infinite;
-		animation-delay: 1s;
-	}
-
-	@keyframes animate2
-	{
-		0% {transform: translateY(-100%);}
-		100% {transform: translateY(100%);}
-	}
-
-
-
-
-	.cardss .cardn span:nth-child(3) {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 3px;
-		background: linear-gradient(to left, transparent, #1799ff);
-		animation: animate3 2s linear infinite;
-	}
-
-	@keyframes animate3
-	{
-		0% {transform: translateX(100%);}
-		100% {transform: translateX(-100%);}
-	}
-
-
-
-
-	.cardss .cardn span:nth-child(4) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 3px;
-		height: 100%;
-		background: linear-gradient(to top, transparent, #1799ff);
-		animation: animate4 2s linear infinite;
-		animation-delay: 1s;
-	}
-
-	@keyframes animate4
-	{
-		0% {transform: translateY(100%);}
-		100% {transform: translateY(-100%);}
-	}
-
-
 	@media (max-width: 800px) {
-		main,article[id] {
+		main,.subsection[id] {
 			scroll-margin-top: 8dvh;
 		}
 	}

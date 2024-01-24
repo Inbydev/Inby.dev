@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Footer from '../components/Footer.astro';
 import Projects from "../components/Projects.astro";
 ---
 
@@ -21,7 +22,7 @@ import Projects from "../components/Projects.astro";
 				<p class="p__start">
 					Desarrollador <span>Full Stack</span> de HTML, CSS, JS, Astro, Python, PHP, SQlite y Markdown
 					con <span>2 años</span> de experiencia y creador del proyecto InNotesBy.
-					<a class="more__info" href="sobre-nosotros"> más información aquí:</a>
+					<a class="more__info" href="sobre-nosotros" data-astro-prefetch="tap"> más información aquí:</a>
 				</p>
 			</div>
 			<div class="about">
@@ -37,6 +38,8 @@ import Projects from "../components/Projects.astro";
 			</div>
 		</section>
 	</main>
+
+	<Footer slot="Footer"/>
 
 	<script slot="TagCloud" type="module" src="/src/JS/TagCloud.min.js"></script>
 	<script slot="TagCloud" type="module" src="/src/JS/TagCloud.js"></script>
@@ -143,7 +146,7 @@ import Projects from "../components/Projects.astro";
 	.proyects__container {
 		display: grid;
 		place-content: center;
-		gap: 4em;
+		gap: 2rem;
 	}
 
 	.about__container {

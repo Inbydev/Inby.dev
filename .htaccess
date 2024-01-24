@@ -10,10 +10,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.astro -f
-RewriteRule ^(.*)$ $1.astro
-
 <IfModule mod_headers.c>
   <FilesMatch ".(js|css|xml|png|jpg|jpeg|html|php)$">
     Header set Cache-Control "private"
