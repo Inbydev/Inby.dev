@@ -43,6 +43,8 @@ const { title } = Astro.props;
 
 		<Footer />
 
+		<slot name="TagCloud"/>
+
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 		<script src="/src/JS/loader.js"></script>
@@ -322,7 +324,8 @@ const { title } = Astro.props;
 		transition: all var(--h-s);
 	}
 
-	header .header__box {
+	header
+		.header__box {
 		height: 11dvh;
 		gap: 4em;
 		display: flex;
@@ -331,23 +334,40 @@ const { title } = Astro.props;
 		overflow: hidden;
 		list-style: none;
 	}
-	header .header__box .header__items {
+	header
+		.header__box
+		.header__items {
 		max-height: 94%;
 	}
-	header .header__box .header__items .header__link {
+	header
+		.header__box
+		.header__items
+		.header__link {
 		font-size: 40px;
 		line-height: 20px;
 		color: var(--primary-text);
 		transition: var(--h-s);
 	}
-	header .header__box .header__items .header__link .icon__header {
+	header
+		.header__box
+		.header__items
+		.header__link
+		.icon__header {
 		transition: var(--h-s);
 	}
-	header .header__box .header__items .header__link .icon__header:hover {
+	header
+		.header__box
+		.header__items
+		.header__link
+		.icon__header:hover {
 		color: var(--hover);
 	}
 
-	header .header__box .header__items .header__link .header__logo {
+	header
+		.header__box
+		.header__items
+		.header__link
+		.header__logo {
 		font-size: 70px;
 		font-family: "Great Vibes";
 		margin-right: 50px;
@@ -360,7 +380,11 @@ const { title } = Astro.props;
 		transition: background 0.2s ease;
 	}
 
-	header .header__box .header__items .header__link .header__logo:hover {
+	header
+		.header__box
+		.header__items
+		.header__link
+		.header__logo:hover {
 		background-position-x: -177px;
 	}
 
@@ -372,7 +396,8 @@ const { title } = Astro.props;
 		position: fixed;
 		top: 84dvh;
 	}
-	.header__mobile__container .header__mobile {
+	.header__mobile__container
+		.header__mobile {
 		position: relative;
 		width: 60px;
 		height: 60px;
@@ -385,7 +410,9 @@ const { title } = Astro.props;
 		justify-content: space-evenly;
 		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
 	}
-	.header__mobile__container .header__mobile .header__mobile__items {
+	.header__mobile__container
+		.header__mobile
+		.header__mobile__items {
 		list-style: none;
 		transition: var(--a-s);
 		transform: scale(0);
@@ -443,7 +470,9 @@ const { title } = Astro.props;
 		height: 28px;
 	}
 
-	.header__mobile__container .header__mobile .header__mobile__toggle {
+	.header__mobile__container
+		.header__mobile
+		.header__mobile__toggle {
 		position: absolute;
 		width: 60px;
 		height: 60px;
@@ -457,7 +486,9 @@ const { title } = Astro.props;
 		align-items: center;
 	}
 
-	.header__mobile__container .header__mobile .header__mobile__toggle::before {
+	.header__mobile__container
+		.header__mobile
+		.header__mobile__toggle::before {
 		content: "";
 		position: absolute;
 		width: 30px;
@@ -469,7 +500,9 @@ const { title } = Astro.props;
 		transition-delay: var(--a-s);
 	}
 
-	.header__mobile__container .header__mobile .header__mobile__toggle::after {
+	.header__mobile__container
+		.header__mobile
+		.header__mobile__toggle::after {
 		content: "";
 		position: absolute;
 		width: 30px;
@@ -481,16 +514,21 @@ const { title } = Astro.props;
 		transition-delay: var(--a-s);
 	}
 
-	.header__mobile__container .header__mobile.active {
+	.header__mobile__container
+		.header__mobile.active {
 		width: 90svw;
 	}
-	.header__mobile__container .header__mobile.active .header__mobile__items {
+	.header__mobile__container
+		.header__mobile.active
+		.header__mobile__items {
 		transition-delay: 0.75s;
 		display: flex;
 		transform: scale(1);
 	}
 
-	.header__mobile__container .header__mobile.active .header__mobile__toggle {
+	.header__mobile__container
+		.header__mobile.active
+		.header__mobile__toggle {
 		background: #ff4181;
 		transition-delay: 0s;
 		transform: translateY(8dvh);

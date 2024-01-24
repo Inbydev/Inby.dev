@@ -17,8 +17,9 @@ import Header from "../components/Header.astro";
 	
 		<section class="about__container detector" id="about">
 			<div class="about">
-				<p class="p__start">Desarrollador <span>Full Stack</span> de HTML, CSS, JS y PHP
-					con <span>1 año</span> de experiencia y creador del proyecto InNotesBy.
+				<p class="p__start">
+					Desarrollador <span>Full Stack</span> de HTML, CSS, JS, Astro, Python, PHP, SQlite y Markdown
+					con <span>2 años</span> de experiencia y creador del proyecto InNotesBy.
 					<a class="more__info" href="sobre-nosotros"> más información aquí:</a>
 				</p>
 			</div>
@@ -30,19 +31,23 @@ import Header from "../components/Header.astro";
 	
 		<section class="proyects__section detector" id="proyects">
 			<h2>Proyectos</h2>
-			<div class="proyects__container">
+			<article class="proyects__container">
 				<a class="proyects__link" href="#">
-					<h3 class="proyects__h4">InNotesBy</h3>
+					<h3 class="proyects__text">InNotesBy</h3>
+					<p class="proyects__text">tecnologias...</p>
+					<img>
 				</a>
 				<a class="proyects__link" href="#">
-					<h3 class="proyects__h4">InSuccessBy</h3>
+					<h3 class="proyects__text">InSuccessBy</h3>
+					<p class="proyects__text">tecnologias...</p>
+					<img>
 				</a>
-			</div>
+			</article>
 		</section>
 	</main>
 
-	<script type="module" src="/src/JS/TagCloud.min.js"></script>
-	<script type="module" src="/src/JS/TagCloud.js"></script>
+	<script slot="TagCloud" type="module" src="/src/JS/TagCloud.min.js"></script>
+	<script slot="TagCloud" type="module" src="/src/JS/TagCloud.js"></script>
 </Layout>
 
 <style is:inline>
@@ -144,27 +149,32 @@ import Header from "../components/Header.astro";
 	}
 
 	.proyects__container {
-		display: flex;
-		flex-wrap: wrap;
-		align-content: center;
-		justify-content: center;
+		display: grid;
+		place-content: center;
 		gap: 4em;
 	}
 
-	.proyects__h4 {
-		letter-spacing: 0;
+	.proyects__link {
 		transition: var(--h-s);
-		color: var(--secondary-text);
 		background: var(--hover);
 		border-radius: 12px;
 		padding: 5px 15px;
-		height: 56px;
+		height: 30rem;
+		aspect-ratio: 16/9;
 	}
 
-	.proyects__link:hover .proyects__h4 {
-		letter-spacing: 0.1em;
-		color: var(--hover);
+	.proyects__text {
+		transition: var(--h-s);
+		color: var(--secondary-text);
+	}
+
+
+	.proyects__link:hover {
 		background: var(--secondary-text);
+	}
+
+	.proyects__link:hover .proyects__text {
+		color: var(--hover);
 	}
 
 	.about__container {
@@ -208,16 +218,6 @@ import Header from "../components/Header.astro";
 
 		.about__container {
 			margin: 0 auto 4em auto;
-		}
-	}
-
-	@media (max-width: 488px) {
-		.proyects__container {
-			flex-direction: column;
-		}
-
-		.proyects__link:hover .proyects__h4 {
-			letter-spacing: 0;
 		}
 	}
 </style>
