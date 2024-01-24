@@ -5,6 +5,7 @@ var texts = [
     'Python',
     'PHP',
     'Astro',
+    'Git',
     'SQLite',
     'Markdown',
 ];

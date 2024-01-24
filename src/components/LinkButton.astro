@@ -1,0 +1,25 @@
+---
+const { href } = Astro.props
+---
+
+<a href={href} class="LinkButton">
+<slot />
+</a>
+
+<style>
+    .LinkButton {
+        display: flex;
+        align-items: center;
+        color: var(--tertiary-text);
+        gap: 0.5rem;
+        transition: var(--f-h-s);
+    }
+
+    .LinkButton:hover {
+        display: flex;
+        align-items: center;
+        color: var(--secondary-text);
+        gap: 0.5rem;
+        --primary-text: var(--secondary-text);
+    }
+</style>
