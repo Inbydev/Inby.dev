@@ -1,27 +1,152 @@
 ---
+import ASTROicon from  './icons/ASTROicon.astro';
+import RUSTicon from  './icons/RUSTicon.astro';
+import CSSicon from  './icons/CSSicon.astro';
+import JSicon from  './icons/JSicon.astro';
+
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "ASTRO",
+        icon: ASTROicon,
+    },
+    RUST: {
+        name: "Rust",
+        class: "RUST",
+        icon: RUSTicon,
+    },
+    CSS: {
+        name: "CSS",
+        class: "CSS",
+        icon: CSSicon,
+    },
+    JS: {
+        name: "JavaScript",
+        class: "JS",
+        icon: JSicon,
+    }
+}
+
 const PROJECTS = [
     {
-        title: "Project 1",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas aliquid rerum molestias, veniam, quam eius tenetur eaque pariatur aut iste optio at. Placeat magni nostrum ipsum eveniet. Fugit, assumenda optio.",
+        title: "InNotesBy",
+        description: "A webpage to create Notes for public or private access with Astro",
         link: "#",
         github: "#",
         image: "https://www.twine.net/blog/wordpress/wp-content/uploads/2022/10/Screenshot-2022-10-21-at-16.41.03.png",
-        tags: ["HTML", "CSS", "JavaScript"]
+        tags: [TAGS.ASTRO, TAGS.CSS, TAGS.JS]
+    },
+    {
+        title: "InSuccessBy",
+        description: "Application for Track your Tasks like Challenges in a Game with Rust",
+        link: "#",
+        github: "#",
+        image: "https://www.twine.net/blog/wordpress/wp-content/uploads/2022/10/Screenshot-2022-10-21-at-16.41.03.png",
+        tags: [TAGS.RUST, TAGS.CSS, TAGS.JS]
     }
 ]
 ---
 
 {
     PROJECTS.map(({ image, title, description, tags }) => (
-        <article>
+        <article class="project__article">
             <h3>{title}</h3>
             <p>{description}</p>
             <ul>
                 {tags.map(tag => (
-                    <li>{tag}</li>
+                    <li>
+                        <span class={tag.class}>
+                            <tag.icon class="svg"/>
+                            {tag.name}
+                        </span>
+                    </li>
                 ))}
             </ul>
             <img src={image} alt={`Captura de pantalla del proyecto ${image}`}>
         </article>
     ))
 }
+
+<style>
+    .project__article {
+		padding: 15px;
+        display: grid;
+		height: 40rem;
+		aspect-ratio: 16/15;
+        overflow: hidden;
+        gap: 0.25rem;
+	}
+    
+    .project__article > * {
+        margin: 0;
+        padding: 0;
+    }
+	.project__article h3 {
+        display: flex;
+        align-items: center;
+		transition: var(--h-s);
+		color: var(--secondary-text);
+        text-align: left;
+        line-height: 0rem;
+	}
+
+    .project__article ul {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project__article li {
+        list-style: none;
+        color: var(--tertiary-text);
+    }
+
+    .svg {
+        height: 1rem;
+        aspect-ratio: 1;
+    }
+
+    .project__article li span {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        color: var(--primary-text);
+    }
+
+    .project__article li span.ASTRO {
+        background: #2c2052;
+    }
+
+    .project__article li span.RUST {
+        background: #000000;
+    }
+
+    .project__article li span.CSS {
+        background: #12649e;
+    }
+
+    .project__article li span.JS {
+        background: #333330;
+    }
+
+
+    .project__article p {
+        display: flex;
+        align-items: center;
+        max-width: 60ch;
+        font-size: 1.4rem;
+        line-height: normal;
+        text-wrap: balance;
+        text-align: left;
+    }
+
+    .project__article img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+    }
+</style>

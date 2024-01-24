@@ -32,10 +32,9 @@ import Projects from "../components/Projects.astro";
 	
 		<section class="proyects__section detector" id="proyects">
 			<h2>Proyectos</h2>
-			<article class="proyects__container">
+			<div class="proyects__container">
 				<Projects />
-
-			</article>
+			</div>
 		</section>
 	</main>
 
@@ -145,32 +144,6 @@ import Projects from "../components/Projects.astro";
 		display: grid;
 		place-content: center;
 		gap: 4em;
-	}
-
-	.proyects__link {
-		transition: var(--h-s);
-		background: var(--hover);
-		border-radius: 12px;
-		padding: 5px 15px;
-		height: 28rem;
-		aspect-ratio: 16/9;
-	}
-
-	.proyects__link img {
-		object-fit: cover;
-	}
-
-	.proyects__link:hover {
-		background: var(--secondary-text);
-	}
-
-	.proyects__text {
-		transition: var(--h-s);
-		color: var(--secondary-text);
-	}
-
-	.proyects__link:hover .proyects__text {
-		color: var(--hover);
 	}
 
 	.about__container {
