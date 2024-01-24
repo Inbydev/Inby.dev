@@ -461,14 +461,15 @@ const { title } = Astro.props;
 		font-size: 40px;
 		line-height: 20px;
 		color: var(--primary-text);
-		transition: var(--h-s);
+		transition: 0.2s ease;
+		cursor: default;
 	}
 	header
 		.header__box
 		.header__items
 		.header__link
 		.icon__header {
-		transition: var(--h-s);
+		transition: 0.2s ease;
 	}
 	header
 		.header__box
@@ -476,6 +477,7 @@ const { title } = Astro.props;
 		.header__link
 		.icon__header:hover {
 		color: var(--hover);
+		cursor: pointer;
 	}
 
 	header
@@ -499,6 +501,7 @@ const { title } = Astro.props;
 		.header__link
 		.header__logo:hover {
 		background-position-x: -166px;
+		cursor: pointer;
 	}
 
 	.header__mobile__container {
