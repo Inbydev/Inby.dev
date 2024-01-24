@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Inby ❤">
@@ -32,16 +33,8 @@ import Header from "../components/Header.astro";
 		<section class="proyects__section detector" id="proyects">
 			<h2>Proyectos</h2>
 			<article class="proyects__container">
-				<a class="proyects__link" href="#">
-					<h3 class="proyects__text">InNotesBy</h3>
-					<p class="proyects__text">tecnologias...</p>
-					<img>
-				</a>
-				<a class="proyects__link" href="#">
-					<h3 class="proyects__text">InSuccessBy</h3>
-					<p class="proyects__text">tecnologias...</p>
-					<img>
-				</a>
+				<Projects />
+
 			</article>
 		</section>
 	</main>
@@ -142,10 +135,10 @@ import Header from "../components/Header.astro";
 	}
 
 	.proyects__section {
-		display: flex;
-		flex-direction: column;
-		gap: 2em;
+		display: grid;
+		gap: 2rem;
 		min-height: 50dvh;
+		margin: 0 4rem 2rem 4rem;
 	}
 
 	.proyects__container {
@@ -159,18 +152,21 @@ import Header from "../components/Header.astro";
 		background: var(--hover);
 		border-radius: 12px;
 		padding: 5px 15px;
-		height: 30rem;
+		height: 28rem;
 		aspect-ratio: 16/9;
+	}
+
+	.proyects__link img {
+		object-fit: cover;
+	}
+
+	.proyects__link:hover {
+		background: var(--secondary-text);
 	}
 
 	.proyects__text {
 		transition: var(--h-s);
 		color: var(--secondary-text);
-	}
-
-
-	.proyects__link:hover {
-		background: var(--secondary-text);
 	}
 
 	.proyects__link:hover .proyects__text {

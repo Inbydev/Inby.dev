@@ -1,0 +1,27 @@
+---
+const PROJECTS = [
+    {
+        title: "Project 1",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas aliquid rerum molestias, veniam, quam eius tenetur eaque pariatur aut iste optio at. Placeat magni nostrum ipsum eveniet. Fugit, assumenda optio.",
+        link: "#",
+        github: "#",
+        image: "https://www.twine.net/blog/wordpress/wp-content/uploads/2022/10/Screenshot-2022-10-21-at-16.41.03.png",
+        tags: ["HTML", "CSS", "JavaScript"]
+    }
+]
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags }) => (
+        <article>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <ul>
+                {tags.map(tag => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+        </article>
+    ))
+}
