@@ -256,8 +256,8 @@ const { title } = Astro.props;
 	h1 {
 		font-size: clamp(100% - 0.125rem, 28vw, 12rem);
 		font-family: "RubikDoodleShadow";
-		margin-right: 50px;
-		padding: 15px;
+		margin: 0;
+		padding: 15px 15px 30px 30px;
 		background: linear-gradient(
 			to right,
 			var(--primary-text),
@@ -270,6 +270,7 @@ const { title } = Astro.props;
 
 	h2 {
 		font-size: clamp(100% - 20px, 11.5vw, 50px);
+		text-wrap: pretty;
 	}
 
 	h3 {

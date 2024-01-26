@@ -16,7 +16,7 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 		</div>
 	</section>
 
-	<main id="pfp">
+	<section id="pfp">
 		<div class="sobre_box">
 			<div class="sobre_content">
 				<img src="/src/Images/sobrenosotros1.webp" alt="sobre_nosotros_1">
@@ -31,7 +31,7 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 				<h2><span>Desarrollador UI & UX</span></h2>
 			</div>
 		</div>
-	</main>
+	</section>
 
 	<section>
 		<section class="subsection" id="about">
@@ -69,15 +69,21 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 		display: inline-table;
 	}
 
+	.home {
+		min-height: 80dvh;
+	}
+
 	.subsection {
-		margin-top: 80px;
+		margin-top: 4rem;
 		display: flex;
-		justify-content: center;
+		justify-content: start;
 		align-items: center;
 		flex-direction: column;
-		width: 90%;
+		width: 100%;
+		padding: 1em;
 		max-width: 68em;
-		gap: 1em;
+		min-height: 60dvh;
+		gap: 2rem;
 	}
 
 	.subsection:first-child {
@@ -85,8 +91,11 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 	}
 
 	.subsection h2 {
-		font-size: 6rem;
+		font-size: clamp(2rem, 10vw, 6rem);;
 		font-family: "RubikDoodleShadow";
+		width: 10ch;
+		margin: 0;
+		padding: 0;
 	}
 
 	.subsection h2 span{
@@ -99,19 +108,23 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 	}
 
 	.subsection p {
-		font-size: clamp(20px, 7vw, 24px);
-		line-height: clamp(32px, 7vw, 36px);
+		font-size: clamp(0.6rem, 3vw, 1.6rem);
+		line-height: normal;
 		text-align: start;
-		margin-bottom: 1em;
+		width: 50ch;
+		text-wrap: balance;
+		margin: 0 0 2em 2em;
+		padding: 0;
 	}
 
-	main,.subsection[id] {
+	#pfp, .subsection[id] {
 		scroll-margin-top: 16dvh;
 	}
 
-	main {
+	#pfp {
 		display: flex;
 		justify-content: center;
+		min-height: 0;
 	}
 
 	.sobre_box {
