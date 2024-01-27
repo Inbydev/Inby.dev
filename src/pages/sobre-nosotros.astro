@@ -28,8 +28,8 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 			<div class="sobre_box">
 				<div class="sobre_content">
 					<img src="/src/Images/sobrenosotros2.webp" alt="sobre_nosotros_2">
-					<h2>Infi</h2>
-					<h2><span>Desarrollador UI & UX</span></h2>
+					<h2>Inbydev</h2>
+					<h2><span>Desarrollador Web</span></h2>
 				</div>
 			</div>
 		</section>
@@ -55,6 +55,58 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 </Layout>
 
 <style>
+	@font-face {
+		font-family: "Shizuru";
+		src:
+			url("../public/FONTS/Shizuru-Regular.woff2") format("woff2"),
+			url("../public/FONTS/Shizuru-Regular.woff") format("woff"),
+			url("../public/FONTS/Shizuru-Regular.ttf") format("truetype");
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Single Day";
+		src:
+			url("../public/FONTS/SingleDay-Regular.woff2") format("woff2"),
+			url("../public/FONTS/SingleDay-Regular.woff") format("woff"),
+			url("../public/FONTS/SingleDay-Regular.ttf") format("truetype");
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+	}
+
+	h1::before {
+		position: absolute;
+		content: "インビー";
+		font-family: "Shizuru";
+		z-index: -1;
+		font-size: 0.4em;
+		opacity: 0.2;
+		inset: 35svh 4.6em 0 0;
+		color: var(--primary-text);
+	}
+
+	h1::after {
+		position: absolute;
+		content: "인비";
+		font-family: "Single Day";
+		z-index: -1;
+		font-size: 0.4em;
+		opacity: 0.2;
+		inset: 36svh 0 0 6.4em;
+		color: var(--primary-text);
+	}
+
+	.h2__title {
+		font-size: clamp(100% - 20px, 9.5vw, 70px);
+	}
+
+	.h2__title span {
+		display: inline-table;
+	}
+
 	h2 span:nth-child(1) {
 		background: linear-gradient(to right, #c08bfd, #fca6fd);
 		-webkit-background-clip: text;
@@ -73,6 +125,10 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 
 	.home {
 		min-height: 80dvh;
+	}
+	
+	.homepage h3 {
+		font-size: clamp(100% - 20px, 5.5vw, 34px);
 	}
 
 	.subsection {
@@ -93,9 +149,9 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 	}
 
 	.subsection h2 {
-		font-size: clamp(2rem, 10vw, 6rem);;
+		font-size: clamp(2rem, 10vw, 6rem);
 		font-family: "RubikDoodleShadow";
-		width: 10ch;
+		max-width: 10ch;
 		margin: 0;
 		padding: 0;
 	}
@@ -106,17 +162,18 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 		-webkit-background-clip: text;
 		background-clip: text;
 		display: inline-table;
-		font-size: 4rem;
+		font-size: clamp(2rem, 8vw, 4rem);
 	}
 
 	.subsection p {
-		font-size: clamp(0.6rem, 3vw, 1.6rem);
+		font-size: clamp(1rem,3vw,1.6rem);
 		line-height: normal;
 		text-align: start;
-		width: 50ch;
+		max-width: 50ch;
 		text-wrap: balance;
-		margin: 0 0 2em 2em;
+		margin: 0 0 2em .6em;
 		padding: 0;
+		width: 100%;
 	}
 
 	#pfp, .subsection[id] {
@@ -144,9 +201,9 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 		content: '';
 		position: absolute;
 		inset: -10px 8.4dvw;
-		background: linear-gradient(315deg, #00ccff, #d400d4);
+		background: linear-gradient(315deg, var(--tertiary-text), #d400d4);
 		transition: 0.5s;
-		animation: animate 4s linear infinite;
+		animation: animate 6s linear infinite;
 	}
 
 	.sobre_box:hover::before {
@@ -214,6 +271,16 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 	@media (max-width: 800px) {
 		main,.subsection[id] {
 			scroll-margin-top: 8dvh;
+		}
+	}
+
+	@media (max-width: 401px) {
+		h1::before {
+			inset: 33svh 4.6em 0 0 !important;
+		}
+
+		h1::after {
+			inset: 34svh 0 0 6.4em !important;
 		}
 	}
 </style>
