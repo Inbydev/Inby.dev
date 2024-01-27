@@ -4,5 +4,5 @@ window.onload = function() {
 
     setTimeout(function() {
         loader.style.display = 'none';
-    }, 300);
+    }, 100);
 };
