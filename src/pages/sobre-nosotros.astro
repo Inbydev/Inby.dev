@@ -8,46 +8,48 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 <Layout title="Inby ❤">
 
 	<Header />
-	<section class="home" id="home">
-		<h1>Inby</h1>
-		<div class="homepage">
-			<h2 class="h2__title">Desarrollador <span>UI</span> & <span>UX</span></h2>
-			<h3>Ve hacía abajo para encontrar información sobre nosotros!</h3>
-		</div>
-	</section>
-
-	<section id="pfp">
-		<div class="sobre_box">
-			<div class="sobre_content">
-				<img src="/src/Images/sobrenosotros1.webp" alt="sobre_nosotros_1">
-				<h2>Aliceki</h2>
-				<h2><span>Artista</span></h2>
-			</div>
-		</div>
-		<div class="sobre_box">
-			<div class="sobre_content">
-				<img src="/src/Images/sobrenosotros2.webp" alt="sobre_nosotros_2">
-				<h2>Infi</h2>
-				<h2><span>Desarrollador UI & UX</span></h2>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<section class="subsection" id="about">
-			<h2>Sobre nosotros</h2>
-			<p>Nuestra historia comenzó a principios del año 2022 por mi, Infi. Lo que en un principio fue un intento por aprender algo nuevo, se convirtió en una algo increíble. Me encantó tanto el frontend como el backend.</p>
-			<p>Para mi, Aliceki es de las personas que más me a apoyado en este camino, por eso la incluyo en este proyecto. Sin el apoyo de ella, lo más probable es que nada de esto lo habría podido lograr.</p>
-			<p>¡Bienvenido a lo que con mucho amor hemos creado!</p>
-		</section>
-
-		<section class="subsection" id="thanks">
-			<h2><span>Agradecimientos especiales a:</span></h2>
-			<div class="cards_container">
-				<Agradecimientos />
+	<main>
+		<section class="home" id="home">
+			<h1>Inby</h1>
+			<div class="homepage">
+				<h2 class="h2__title">Desarrollador <span>UI</span> & <span>UX</span></h2>
+				<h3>Ve hacía abajo para encontrar información sobre nosotros!</h3>
 			</div>
 		</section>
-	</section>
+	
+		<section id="pfp">
+			<div class="sobre_box">
+				<div class="sobre_content">
+					<img src="/src/Images/sobrenosotros1.webp" alt="sobre_nosotros_1">
+					<h2>Aliceki</h2>
+					<h2><span>Artista</span></h2>
+				</div>
+			</div>
+			<div class="sobre_box">
+				<div class="sobre_content">
+					<img src="/src/Images/sobrenosotros2.webp" alt="sobre_nosotros_2">
+					<h2>Infi</h2>
+					<h2><span>Desarrollador UI & UX</span></h2>
+				</div>
+			</div>
+		</section>
+	
+		<section>
+			<section class="subsection" id="about">
+				<h2>Sobre nosotros</h2>
+				<p>Nuestra historia comenzó a principios del año 2022 por mi, Infi. Lo que en un principio fue un intento por aprender algo nuevo, se convirtió en una algo increíble. Me encantó tanto el frontend como el backend.</p>
+				<p>Para mi, Aliceki es de las personas que más me a apoyado en este camino, por eso la incluyo en este proyecto. Sin el apoyo de ella, lo más probable es que nada de esto lo habría podido lograr.</p>
+				<p>¡Bienvenido a lo que con mucho amor hemos creado!</p>
+			</section>
+	
+			<section class="subsection" id="thanks">
+				<h2><span>Agradecimientos especiales a:</span></h2>
+				<div class="cards_container">
+					<Agradecimientos />
+				</div>
+			</section>
+		</section>
+	</main>
 
 	<Footer slot="Footer"/>
 </Layout>
@@ -81,7 +83,7 @@ import Agradecimientos from "../components/Agradecimientos.astro";
 		flex-direction: column;
 		width: 100%;
 		padding: 1em;
-		max-width: 68em;
+		max-width: 80em;
 		min-height: 60dvh;
 		gap: 2rem;
 	}
