@@ -47,6 +47,48 @@ const AGRADECIMIENTOS = [
     ))
 }
 
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        let maxVisible = 0;
+        let elementVisible = null;
+
+        entries.forEach((entrada) => {
+            const proportion = entrada.intersectionRatio;
+            const percentageVisible = Math.min(proportion * 100, 100);
+
+            if (percentageVisible > maxVisible && proportion > 0.5) {
+                maxVisible = percentageVisible;
+                elementVisible = entrada.target;
+            }
+        });
+
+        hidden.forEach((el) => el.classList.remove('active'));
+
+        if (elementVisible) {
+            elementVisible.classList.add('active');
+        }
+    });
+
+    const hidden = document.querySelectorAll('.card');
+
+    if (window.innerWidth <= 727) {
+        hidden.forEach((el) => observer.observe(el));
+    }
+
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 727) {
+            observer.disconnect();
+            hidden.forEach((el) => observer.observe(el));
+        }
+    });
+</script>
+
+
+
+
+
+
+
 <style is:inline>
     .cards_container {
         width: min(100%, 100% - 2rem);
@@ -67,10 +109,10 @@ const AGRADECIMIENTOS = [
         align-items: center;
         box-shadow: 0 20px 50px rgba(0,0,0,0.2);
         overflow: hidden;
-        
     }
 
-    .cards_container .card:hover {
+    .cards_container .card:hover,
+    .cards_container .card.active {
         opacity: 1;
     }
 
@@ -105,7 +147,8 @@ const AGRADECIMIENTOS = [
         top: 30%;
     }
 
-    .cards_container .card:hover .card_content h2 {
+    .cards_container .card:hover .card_content h2,
+    .cards_container .card.active .card_content h2 {
         opacity: 1;
         transform: translateY(-110%);
     }
@@ -124,7 +167,9 @@ const AGRADECIMIENTOS = [
     }
 
     .cards_container .card:hover .card_content h3,
-    .cards_container .card:hover .card_content p{
+    .cards_container .card.active .card_content h3,
+    .cards_container .card:hover .card_content p,
+    .cards_container .card.active .card_content p{
         opacity: 1;
     }
 
@@ -159,7 +204,8 @@ const AGRADECIMIENTOS = [
     }
 
 
-    .cards_container .card:hover span {
+    .cards_container .card:hover span,
+    .cards_container .card.active span {
         opacity: 1;
     }
 
