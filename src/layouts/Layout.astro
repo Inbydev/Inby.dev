@@ -46,7 +46,13 @@ const { title } = Astro.props;
 		<script defer src="/src/JS/header.js"></script>
 	</body>
 </html>
+
 <style is:global>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
 	img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]
 	{
 		display: none;
@@ -74,6 +80,51 @@ const { title } = Astro.props;
 		font-display: swap;
 	}
 	
+	
+	@font-face {
+		font-family: "Shizuru";
+		src:
+			url("/public/FONTS/Shizuru-Regular.woff2") format("woff2"),
+			url("/public/FONTS/Shizuru-Regular.woff") format("woff"),
+			url("/public/FONTS/Shizuru-Regular.ttf") format("truetype");
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Single Day";
+		src:
+			url("/public/FONTS/SingleDay-Regular.woff2") format("woff2"),
+			url("/public/FONTS/SingleDay-Regular.woff") format("woff"),
+			url("/public/FONTS/SingleDay-Regular.ttf") format("truetype");
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+	}
+
+	h1::before {
+		position: absolute;
+		content: "インビー";
+		font-family: "Shizuru";
+		z-index: -1;
+		font-size: 0.4em;
+		opacity: 0.2;
+		inset: 46svh 4em 0 0;
+		color: var(--primary-text);
+	}
+
+	h1::after {
+		position: absolute;
+		content: "인비";
+		font-family: "Single Day";
+		z-index: -1;
+		font-size: 0.4em;
+		opacity: 0.2;
+		inset: 47svh 0 0 5.4em;
+		color: var(--primary-text);
+	}
+
 	:root {
 		--primary-text: #f1d7fd;
 		--secondary-text: #cd7af7;
@@ -107,7 +158,7 @@ const { title } = Astro.props;
 }
 
 	footer p {
-		font-size: 1.4em;
+		font-size: clamp(1rem, 4vw, 1.6rem);
 		line-height: 1em;
 		padding: 0;
 	}
@@ -128,12 +179,6 @@ const { title } = Astro.props;
 		left: 0;
 		right: 0;
 		top: -10dvh;
-	}
-
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
 	}
 
 	ul,
@@ -577,6 +622,16 @@ const { title } = Astro.props;
 
 		section[id] {
 			scroll-margin-top: 8dvh;
+		}
+	}
+
+	@media (max-width: 401px) {
+		h1::before {
+			inset: 43svh 4em 0 0 !important;
+		}
+
+		h1::after {
+			inset: 43.6vh 0 0 5.4em !important;
 		}
 	}
 </style>

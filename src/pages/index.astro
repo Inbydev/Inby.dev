@@ -41,8 +41,9 @@ import Projects from "../components/Projects.astro";
 
 	<Footer slot="Footer"/>
 
-	<script slot="TagCloudScript" src="TagCloud.min.js"></script>
-	<script slot="TagCloudScript" src="TagCloudVariables.js"><script>
+	<script slot="TagCloudScript" src="/src/JS/TagCloud.min.js"></script>
+	<script slot="TagCloudScript" src="/src/JS/TagCloudVariables.js"></script>
+
 </Layout>
 
 <style is:inline>
@@ -65,50 +66,6 @@ import Projects from "../components/Projects.astro";
 </style>
 
 <style>
-	@font-face {
-		font-family: "Shizuru";
-		src:
-			url("/public/FONTS/Shizuru-Regular.woff2") format("woff2"),
-			url("/public/FONTS/Shizuru-Regular.woff") format("woff"),
-			url("/public/FONTS/Shizuru-Regular.ttf") format("truetype");
-		font-style: normal;
-		font-weight: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Single Day";
-		src:
-			url("/public/FONTS/SingleDay-Regular.woff2") format("woff2"),
-			url("/public/FONTS/SingleDay-Regular.woff") format("woff"),
-			url("/public/FONTS/SingleDay-Regular.ttf") format("truetype");
-		font-style: normal;
-		font-weight: normal;
-		font-display: swap;
-	}
-
-	h1::before {
-		position: absolute;
-		content: "インビー";
-		font-family: "Shizuru";
-		z-index: -1;
-		font-size: 0.4em;
-		opacity: 0.2;
-		inset: 46svh 4em 0 0;
-		color: var(--primary-text);
-	}
-
-	h1::after {
-		position: absolute;
-		content: "인비";
-		font-family: "Single Day";
-		z-index: -1;
-		font-size: 0.4em;
-		opacity: 0.2;
-		inset: 47svh 0 0 5.4em;
-		color: var(--primary-text);
-	}
-
 	.h2__title {
 		font-size: clamp(100% - 20px, 9.5vw, 70px);
 	}
@@ -190,16 +147,6 @@ import Projects from "../components/Projects.astro";
 
 		.about__container {
 			margin: 0 auto 4em auto;
-		}
-	}
-
-	@media (max-width: 401px) {
-		h1::before {
-			inset: 43svh 4em 0 0 !important;
-		}
-
-		h1::after {
-			inset: 43.6vh 0 0 5.4em !important;
 		}
 	}
 </style>
