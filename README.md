@@ -1,5 +1,29 @@
-# My portfolio with Astro
+# Inbydev Portfolio with Astro
 
+![imagen](https://github.com/Inbydev/Inby.dev/assets/139036190/6965f94d-013f-460e-a3d2-50910873e3c4)
+
+
+## Projects:
+-   [InNotesBy](https://github.com/Inbydev/InNotesBy)
+
+## How to do a build
+
+As my knowledge about Astro is limited, to build the project, i followed these steps:
+
+- Manually move the src directory to the target directory, including only the JS and Images folders.
+
+This process is necessary due to current limitations and may be optimized in future updates.
+
+## Contributing
+
+To contribute to this project, you can:
+- Open an Issue
+- Make Suggestions
+- Submit a Pull Request
+
+Your contributions and efforts to improve this project are greatly valued!
+
+## License
 <h3>
 <a href="https://github.com/Inbydev/Inby.dev">Inby.dev</a> © 2022 - 2024
 by
@@ -7,16 +31,4 @@ by
 is licensed under
 <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" style="display:inline-block;">CC BY-SA 4.0
 </a>
-</h3>
-
-## Projects:
--   [InNotesBy](https://github.com/Inbydev/InNotesBy)
-
-## Cómo realizar una construcción manual
-
-Debido a mi limitado conocimiento en la materia y la ocupación de ciertos elementos, se requiere realizar una construcción manual del proyecto. Siga estos pasos:
-
-    Mueva manualmente el directorio src al directorio de destino.
-    Asegúrese de incluir las carpetas JS e images dentro del directorio src.
-
-Este proceso es necesario debido a las limitaciones actuales y puede ser optimizado en futuras actualizaciones.
+</h4>
