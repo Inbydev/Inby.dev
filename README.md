@@ -11,5 +11,12 @@ is licensed under
 
 ## Projects:
 -   [InNotesBy](https://github.com/Inbydev/InNotesBy)
--   [InSuccessBy](https://github.com/Inbydev/InSuccessBy)
 
+## Cómo realizar una construcción manual
+
+Debido a mi limitado conocimiento en la materia y la ocupación de ciertos elementos, se requiere realizar una construcción manual del proyecto. Siga estos pasos:
+
+    Mueva manualmente el directorio src al directorio de destino.
+    Asegúrese de incluir las carpetas JS e images dentro del directorio src.
+
+Este proceso es necesario debido a las limitaciones actuales y puede ser optimizado en futuras actualizaciones.
