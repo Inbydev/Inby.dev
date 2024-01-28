@@ -21,8 +21,6 @@ const { title } = Astro.props;
 		<meta name="theme-color" content="#896db7">
 		<meta property="og:title" content="Inbydev">
 		<meta property="og:description" content="Portafolio de Infi">
-		<meta property="og:image" content="/Images/og.png">
-		<meta property="og:image:alt" content="Logo de la página web Inbydev">
 		<link rel="icon" href="/src/Images/icono.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -41,8 +39,7 @@ const { title } = Astro.props;
 
 		<slot name="Footer"/>
 
-		<slot name="TagCloud"/>
-
+		<slot name="TagCloudScript"/>
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 		<script src="/src/JS/loader.js"></script>
