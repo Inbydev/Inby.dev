@@ -6,10 +6,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php
-
 <IfModule mod_headers.c>
   <FilesMatch ".(js|css|xml|png|jpg|jpeg|html|php)$">
     Header set Cache-Control "private"
