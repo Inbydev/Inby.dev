@@ -36,7 +36,7 @@ const PROJECTS = [
         description: "Para crear Notas para acceso público con PHP",
         link: "#",
         github: "https://github.com/Inbydev/InNotesBy",
-        image: "https://www.twine.net/blog/wordpress/wp-content/uploads/2022/10/Screenshot-2022-10-21-at-16.41.03.png",
+        image: "/src/Images/InNotesBy_screenshot",
         tags: [TAGS.PHP, TAGS.CSS, TAGS.JS]
     }
 ]
@@ -57,7 +57,7 @@ const PROJECTS = [
                     </li>
                 ))}
             </ul>
-            <img src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+            <img src={image} alt={`Captura de pantalla del proyecto ${title}`}>
             <footer class="footer">
                 <LinkButton href={github}>
                     <IcoGitHub class="svg__link" />
