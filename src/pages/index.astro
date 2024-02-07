@@ -12,7 +12,7 @@ import Projects from "../components/Projects.astro";
 		<section class="home" id="home">
 			<h1>Inby</h1>
 			<div class="homepage">
-				<h2 class="h2__title">Desarrollador <spa>Web</span></h2>
+				<h2>Desarrollador <span>Web</span></h2>
 				<h3>Ve abajo!</h3>
 			</div>
 		</section>
@@ -66,22 +66,12 @@ import Projects from "../components/Projects.astro";
 </style>
 
 <style>
-	.h2__title {
+	.homepage h2 {
 		font-size: clamp(100% - 20px, 9.5vw, 70px);
 	}
 
-	.h2__title span {
+	.homepage h2 span {
 		display: inline-table;
-	}
-
-	.h2__title span:nth-child(1) {
-		background: linear-gradient(to right, #c08bfd, #fca6fd);
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-
-	.h2__title span:nth-child(2) {
 		background: linear-gradient(to right, #87cafa, #878cfa);
 		-webkit-background-clip: text;
 		background-clip: text;
@@ -127,14 +117,10 @@ import Projects from "../components/Projects.astro";
 		text-align: start;
 	}
 
-	.p__start span:nth-child(1) {
+	.p__start span {
 		color: var(--secondary-text);
 	}
-
-	.p__start span:nth-child(2) {
-		color: var(--secondary-text);
-	}
-
+	
 	.content {
 		display: flex;
 		justify-content: center;
