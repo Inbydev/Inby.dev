@@ -1,5 +1,5 @@
 window.onload = function() {
-    const loader = document.querySelector('.icon-load');
+    const loader = document.getElementById('icon-load');
     loader.style.opacity = 0;
 
     setTimeout(function() {
