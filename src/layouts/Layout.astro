@@ -47,6 +47,30 @@ const { title } = Astro.props;
 	</body>
 </html>
 
+<style is:inline>
+	h1::before {
+		position: absolute;
+		content: "インビー";
+		font-family: "Shizuru";
+		z-index: -1;
+		font-size: 0.4em;
+		opacity: 0.2;
+		inset: 46svh 4em 0 0;
+		color: var(--primary-text);
+	}
+
+	h1::after {
+		position: absolute;
+		content: "인비";
+		font-family: "Single Day";
+		z-index: -1;
+		font-size: 0.4em;
+		opacity: 0.2;
+		inset: 47svh 0 0 6.4em;
+		color: var(--primary-text);
+	}
+</style>
+
 <style is:global>
 	* {
 		box-sizing: border-box;
@@ -121,28 +145,6 @@ const { title } = Astro.props;
 		--h-s: .3s;
 		--f-h-s: .2s;
 		--font: "Concert One", arial;
-	}
-
-	h1::before {
-		position: absolute;
-		content: "インビー";
-		font-family: "Shizuru";
-		z-index: -1;
-		font-size: 0.4em;
-		opacity: 0.2;
-		inset: 46svh 4em 0 0;
-		color: var(--primary-text);
-	}
-
-	h1::after {
-		position: absolute;
-		content: "인비";
-		font-family: "Single Day";
-		z-index: -1;
-		font-size: 0.4em;
-		opacity: 0.2;
-		inset: 47svh 0 0 6.4em;
-		color: var(--primary-text);
 	}
 
 	footer {
@@ -330,7 +332,7 @@ const { title } = Astro.props;
 		transform: translateX(0);
 	}
 
-	header {
+	.header {
 		filter: blur(5px);
 		transform: translateY(-11dvh);
 		width: 100%;
@@ -345,7 +347,7 @@ const { title } = Astro.props;
 		transition: all var(--h-s);
 	}
 
-	header .header__box {
+	.header .header__box {
 		height: 11dvh;
 		min-height: 6rem;
 		gap: 4em;
