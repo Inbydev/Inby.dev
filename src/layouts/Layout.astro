@@ -77,11 +77,7 @@ const { title } = Astro.props;
 		margin: 0;
 		padding: 0;
 	}
-
-	img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
-		display: none;
-	}
-
+	
 	@font-face {
 		font-family: "Concert One";
 		src:
@@ -391,7 +387,7 @@ const { title } = Astro.props;
 	}
 
 	.header__box .header__items .header__link .header__logo:hover {
-		background-position-x: -150px;
+		background-position-x: -380px;
 		cursor: pointer;
 	}
 
@@ -475,8 +471,8 @@ const { title } = Astro.props;
 		justify-content: center;
 		align-items: center;
 		-webkit-box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.1);
-        -moz-box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.1);
-        box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.1);
+		-moz-box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.1);
+		box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.1);
 		border: 2px solid var(--primary-text);
 	}
 
@@ -507,8 +503,8 @@ const { title } = Astro.props;
 	.header__mobile.active {
 		width: 90svw;
 		-webkit-box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.25);
-        -moz-box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.25);
-        box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.25);
+		-moz-box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.25);
+		box-shadow: 0px 17px 50px 0px rgba(106,35,138,0.25);
 	}
 
 	.header__mobile.active .header__mobile__items {
@@ -559,7 +555,7 @@ const { title } = Astro.props;
 			display: flex;
 		}
 
-		header,
+		.header,
 		.header__box {
 			display: none;
 		}
