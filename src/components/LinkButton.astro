@@ -12,15 +12,17 @@ const { href } = Astro.props
         align-items: center;
         color: var(--tertiary-text);
         gap: 0.5rem;
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 3vw, 1.1rem);
         transition: var(--f-h-s);
+        background: var(--background-header);
+        border-radius: 23px;
+        border: 2px solid rgba(255,255,255, .2);
+        padding: 5px;
     }
 
     .LinkButton:hover {
-        display: flex;
-        align-items: center;
         color: var(--secondary-text);
-        gap: 0.5rem;
         --primary-text: var(--secondary-text);
+        background: var(--hover);
     }
 </style>
