@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "TagCloud": "^2.4.0",
-    "astro": "^4.2.3"
+    "TagCloud": "^2.5.0",
+    "astro": "^4.5.17"
   }
 }
