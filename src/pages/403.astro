@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	title="Inbyb Error 403 ❤"
+	description="No tienes acceso a esta página"
+	descriptive_title="Inbydev Error 403"
+>
+	<main>
+		<section class="home" id="home">
+			<h2>No tienes acceso <span>a esta página!</span></h2>
+			<a class="volver__inbydev" href="/" data-astro-prefetch="tap">Volver a la página principal:</a>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	h2 {
+		font-size: clamp(100% - 20px, 9.5vw, 70px);
+	}
+
+	h2 span {
+		display: inline-table;
+		background: linear-gradient(to right, #87cafa, #878cfa);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+	
+	.volver__inbydev {
+		font-size: clamp(100% - 20px, 9.5vw, 50px);
+		cursor: pointer;
+		color: var(--tertiary-text);
+	}
+</style>
