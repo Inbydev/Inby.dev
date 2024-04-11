@@ -1,15 +1,16 @@
 {
-  "name": "inby.dev",
+  "name": "inby-dev",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "TagCloud": "^2.5.0",
-    "astro": "^4.5.17"
-  }
+    "astro": "^4.6.0",
+    "TagCloud": "^2.5.0"
+    }
 }
