@@ -39,8 +39,6 @@ const { description } = Astro.props;
 
 		<slot name="Footer"/>
 
-		<slot name="TagCloudScript"/>
-		
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 		<script src="/src/JS/loader.js"></script>
@@ -58,7 +56,7 @@ const { description } = Astro.props;
 		z-index: -1;
 		font-size: 0.4em;
 		opacity: 0.2;
-		inset: 46svh 4em 0 0;
+		inset: 41svh 4em 0 0;
 		color: var(--primary-text);
 	}
 
@@ -69,7 +67,7 @@ const { description } = Astro.props;
 		z-index: -1;
 		font-size: 0.4em;
 		opacity: 0.2;
-		inset: 47svh 0 0 6.4em;
+		inset: 42svh 0 0 6.4em;
 		color: var(--primary-text);
 	}
 </style>
@@ -201,7 +199,7 @@ const { description } = Astro.props;
 		font-family: none;
 	}
 
-	.background .background__25 {
+	.background div {
 		display: flex;
 	}
 
@@ -215,6 +213,12 @@ const { description } = Astro.props;
 		width: 26vw;
 		min-width: 160px;
 		rotate: 10deg;
+	}
+
+	.background div:nth-child(4) svg {
+		min-width: 120px;
+		rotate: -10deg;
+		width: 20dvw;
 	}
 
 	.background div:nth-child(2) {
@@ -239,32 +243,17 @@ const { description } = Astro.props;
 		width: 70vw;
 	}
 
-	.background div:nth-child(4) svg {
-		min-width: 120px;
-		rotate: -10deg;
-		width: 20dvw;
-	}
-
-	body::-webkit-scrollbar {
-		width: 8px;
-	}
-
-	body::-webkit-scrollbar-thumb {
-		background: var(--primary-text);
-		border-radius: 6px;
-	}
-
 	html {
+		scrollbar-color: var(--primary-text);
+		scrollbar-width: thin;
 		scroll-behavior: smooth;
 		color: var(--primary-text);
 	}
 
-	/*----------  exit  ----------*/
-
 	.homepage {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 2.4rem;
 	}
 
 	h1,
@@ -273,10 +262,26 @@ const { description } = Astro.props;
 	h4,
 	p,
 	span {
-		text-align: center;
 		color: var(--primary-text);
 		line-height: normal;
 		font-weight: 100;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	span {
+		text-align: center;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	a,
+	a:visited {
+		color: var(--tertiary-text);
 	}
 
 	h1 {
@@ -310,7 +315,7 @@ const { description } = Astro.props;
 		line-height: var(--lh-p);
 	}
 
-	section {
+	.full-section {
 		display: grid;
 		place-items: center;
 		align-items: center;
@@ -344,54 +349,54 @@ const { description } = Astro.props;
 		background: var(--background-header);
 		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 		transition: all var(--h-s);
-	}
 
-	.header .header__box {
-		height: 11dvh;
-		min-height: 6rem;
-		gap: 4em;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-		list-style: none;
-	}
+		.header__box {
+			height: 11dvh;
+			min-height: 6rem;
+			gap: 4em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			list-style: none;
 
-	.header__box .header__items {
-		max-height: 94%;
-	}
+			.header__items {
+				max-height: 94%;
+				
+				.header__link {
+					font-size: 40px;
+					line-height: 20px;
+					color: var(--primary-text);
+					transition: 0.2s ease;
+					cursor: default;
 
-	.header__box .header__items .header__link {
-		font-size: 40px;
-		line-height: 20px;
-		color: var(--primary-text);
-		transition: 0.2s ease;
-		cursor: default;
-	}
+					.icon__header {
+						transition: 0.2s ease;
 
-	.header__box .header__items .header__link .icon__header {
-		transition: 0.2s ease;
-	}
+						&:hover {
+							color: var(--hover);
+							cursor: pointer;
+						}
+					}
 
-	.header__box .header__items .header__link .icon__header:hover {
-		color: var(--hover);
-		cursor: pointer;
-	}
+					.header__logo {
+						font-size: 70px;
+						font-family: "RubikDoodleShadow";
+						background: linear-gradient(to right, var(--primary-text), var(--secondary-text), var(--tertiary-text));
+						-webkit-background-clip: text;
+						background-clip: text;
+						background-size: 200%;
+						color: transparent;
+						transition: background 0.2s ease;
 
-	.header__box .header__items .header__link .header__logo {
-		font-size: 70px;
-		font-family: "RubikDoodleShadow";
-		background: linear-gradient(to right, var(--primary-text), var(--secondary-text), var(--tertiary-text));
-		-webkit-background-clip: text;
-		background-clip: text;
-		background-size: 200%;
-		color: transparent;
-		transition: background 0.2s ease;
-	}
-
-	.header__box .header__items .header__link .header__logo:hover {
-		background-position-x: -380px;
-		cursor: pointer;
+						&:hover {
+							background-position-x: -140px;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	.header__mobile__container {
@@ -447,7 +452,6 @@ const { description } = Astro.props;
 		background-size: 200%;
 		color: transparent;
 		transition: background 0.2s ease;
-		font-weight: 600;
 	}
 
 
@@ -567,13 +571,13 @@ const { description } = Astro.props;
 		}
 	}
 
-	@media (max-width: 401px) {
+	@media (max-width: 480px) {
 		h1::before {
-			inset: 43svh 4em 0 0 !important;
+			inset: 39svh 4em 0 0 !important;
 		}
 
 		h1::after {
-			inset: 43.6vh 0 0 6.4em !important;
+			inset: 40vh 0 0 6.4em !important;
 		}
 	}
 </style>
