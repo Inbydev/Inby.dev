@@ -1,7 +1,7 @@
 {
   "name": "inby-dev",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.6.0",
-    "TagCloud": "^2.5.0"
+    "astro": "^4.9.0"
     }
 }
