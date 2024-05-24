@@ -1,0 +1,111 @@
+---
+import HTML from './technologies-icons/icoHTML.astro';
+import CSS from './technologies-icons/icoCSS.astro';
+import JS from './technologies-icons/icoJS.astro';
+import ASTRO from './technologies-icons/icoAstro.astro';
+import PHP from './technologies-icons/icoPHP.astro';
+import VSCODE from './technologies-icons/icoVSCode.astro';
+import GIT from './technologies-icons/icoGIT.astro';
+import GITHUB from './technologies-icons/icoGITHUB.astro';
+import KRITA from './technologies-icons/icoKrita.astro';
+import PYTHON from './technologies-icons/icoPython.astro';
+
+const TECHNOLOGIES = [
+    {
+        icon: HTML,
+        section: "Frontend",
+        color: "0, 255, 0"
+    },
+    {
+        icon: CSS,
+        section: "Frontend",
+        color: "0, 255, 0"
+    },
+    {
+        icon: JS,
+        section: "Aprendiendo",
+        color: "255, 255, 0"
+    },
+    {
+        icon: ASTRO,
+        section: "Aprendiendo",
+        color: "255, 93, 1"
+    },
+    {
+        icon: PHP,
+        section: "Backend",
+        color: "255, 0, 0"
+    },
+    {
+        icon: PYTHON,
+        section: "Backend",
+        color: "255, 0, 0"
+    },
+    {
+        icon: VSCODE,
+        section: "Herramientas",
+        color: "255, 0, 0"
+    },
+    {
+        icon: GIT,
+        section: "Aprendiendo",
+        color: "255, 0, 0"
+    },
+    {
+        icon: GITHUB,
+        section: "Herramientas",
+        color: "255, 0, 0"
+    },
+    {
+        icon: KRITA,
+        section: "Herramientas",
+        color: "255, 0, 0"
+    }
+]
+---
+
+<section>
+    {Array.from(new Set(TECHNOLOGIES.map(tech => tech.section))).map(section => (
+        <div>
+            <h3>{section}</h3>
+            <ul>
+                {TECHNOLOGIES.filter(tech => tech.section === section).map(({ icon: Icon, color }) => (
+                    <li>
+                        <Icon />
+                    </li>
+                ))}
+            </ul>
+        </div>
+    ))}
+</section>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        justify-items: center;
+        
+        div {
+            border: 3px solid var(--tertiary-text);
+            background: rgba(24,2,34,.8);
+            border-radius: 8px;
+            width: 20rem;
+            aspect-ratio: 1;
+           
+            ul {
+                list-style: none;
+                margin: 1rem;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 2.4rem;
+
+                li {
+                    width: 3rem;
+
+                }
+            }
+        }
+    }
+</style>
