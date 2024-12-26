@@ -1,0 +1,173 @@
+---
+import HTML from "./icons/technologies-icons/icoHTML.astro";
+import CSS from "./icons/technologies-icons/icoCSS.astro";
+import JS from "./icons/technologies-icons/icoJS.astro";
+import ASTRO from "./icons/technologies-icons/icoAstro.astro";
+import PHP from "./icons/technologies-icons/icoPHP.astro";
+import BASH from "./icons/technologies-icons/icoBASH.astro";
+import ZED from "./icons/technologies-icons/icoZED.astro";
+import GIT from "./icons/technologies-icons/icoGIT.astro";
+import GITHUB from "./icons/technologies-icons/icoGITHUB.astro";
+import KRITA from "./icons/technologies-icons/icoKrita.astro";
+import PYTHON from "./icons/technologies-icons/icoPython.astro";
+import RUST from "./icons/technologies-icons/icoRust.astro";
+
+const TECHNOLOGIES = [
+    {
+        icon: HTML,
+        section: "Frontend",
+        title: "HTML",
+    },
+    {
+        icon: CSS,
+        section: "Frontend",
+        title: "CSS",
+    },
+    {
+        icon: JS,
+        section: "Aprendiendo",
+        title: "JavaScript",
+    },
+    {
+        icon: ASTRO,
+        section: "Aprendiendo",
+        title: "Astro",
+    },
+    {
+        icon: PHP,
+        section: "Aprendiendo",
+        title: "PHP",
+    },
+    {
+        icon: RUST,
+        section: "Aprendiendo",
+        title: "Rust",
+    },
+    {
+        icon: BASH,
+        section: "Backend",
+        title: "Bash",
+    },
+    {
+        icon: PYTHON,
+        section: "Backend",
+        title: "Python",
+    },
+    {
+        icon: ZED,
+        section: "Herramientas",
+        title: "Zed",
+    },
+    {
+        icon: GITHUB,
+        section: "Herramientas",
+        title: "GitHub",
+    },
+    {
+        icon: GIT,
+        section: "Herramientas",
+        title: "Git",
+    },
+    {
+        icon: KRITA,
+        section: "Herramientas",
+        title: "Krita",
+    },
+];
+---
+
+<section>
+    {
+        Array.from(new Set(TECHNOLOGIES.map((tech) => tech.section))).map(
+            (section) => (
+                <div>
+                    <h3>{section}</h3>
+                    <ul>
+                        {TECHNOLOGIES.filter(
+                            (tech) => tech.section === section,
+                        ).map(({ icon: Icon, title }) => (
+                            <li>
+                                <Icon />
+                                <span class="popup-title">{title}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ),
+        )
+    }
+</section>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        justify-items: center;
+
+        div {
+            border: 3px solid var(--tertiary-text);
+            background: rgba(24, 2, 34, 0.8);
+            border-radius: 8px;
+            width: clamp(10.6rem, 40dvw, 20rem);
+            aspect-ratio: 1;
+
+            h3 {
+                font-size: clamp(1.2rem, 4.8dvw, 2rem);
+            }
+
+            ul {
+                list-style: none;
+                margin: 1rem;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: clamp(2rem, 4.8dvw, 2.4rem);
+
+                li {
+                    width: clamp(2.6rem, 8dvw, 3rem);
+                    position: relative;
+
+                    svg {
+                        width: 48px;
+                        aspect-ratio: 1;
+                    }
+
+                    &:hover .popup-title {
+                        opacity: 1;
+                        transform: translateX(-50%) translateY(-4px);
+                    }
+                }
+            }
+        }
+    }
+
+    .popup-title {
+        position: absolute;
+        bottom: calc(100% + 4px);
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        padding: 0.4rem 0.6rem 0.6rem 0.8rem;
+        background: rgb(121, 40, 57);
+        color: white;
+        font-size: 1.4rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+            opacity 0.24s,
+            transform 0.24s;
+    }
+
+    @media (max-width: 480px) {
+        section {
+            gap: 1rem;
+        }
+
+        section div ul {
+            margin: 0 1rem;
+            gap: 1rem clamp(2rem, 4.8dvw, 2.4rem);
+        }
+    }
+</style>

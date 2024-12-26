@@ -1,0 +1,195 @@
+---
+import IcoAstro from "./icons/icoAstro.astro";
+import IcoPHP from "./icons/icoPHP.astro";
+import IcoCSS from "./icons/icoCSS.astro";
+import IcoJS from "./icons/icoJS.astro";
+import IcoGitHub from "./icons/icoGitHub.astro";
+import IcoWeb from "./icons/icoWeb.astro";
+import LinkButton from "./LinkButton.astro";
+
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "ASTRO",
+        icon: IcoAstro,
+    },
+    PHP: {
+        name: "PHP",
+        class: "PHP",
+        icon: IcoPHP,
+    },
+    CSS: {
+        name: "CSS",
+        class: "CSS",
+        icon: IcoCSS,
+    },
+    JS: {
+        name: "JavaScript",
+        class: "JS",
+        icon: IcoJS,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "InNotesBy",
+        description: "Para crear Notas para acceso público con PHP",
+        link: "https://inby.dev/InNotesBy/",
+        github: "https://github.com/Inbydev/InNotesBy",
+        image: "/src/images/InNotesBy_screenshot.webp",
+        tags: [TAGS.PHP, TAGS.CSS, TAGS.JS],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+        <article class="project__article">
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <ul>
+                {tags.map((tag) => (
+                    <li>
+                        <span class={tag.class}>
+                            <tag.icon class="svg" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                src={image}
+                alt={`Captura de pantalla del proyecto ${title}`}
+            />
+            <footer class="footer">
+                <LinkButton href={github}>
+                    <IcoGitHub class="svg__link" />
+                    Ver código fuente
+                </LinkButton>
+                <LinkButton href={link}>
+                    <IcoWeb class="svg__link" />
+                    Ir al sitio web
+                </LinkButton>
+            </footer>
+        </article>
+    ))
+}
+
+<style is:inline>
+    .proyects__section {
+        gap: 2rem;
+        min-height: 50dvh;
+        margin: 0 4rem 0 4rem;
+    }
+
+    .proyects__container {
+        display: grid;
+        place-content: center;
+        gap: 2rem;
+    }
+
+    .project__article {
+        padding: 1rem;
+        display: flex;
+        max-height: 46rem;
+        max-width: 48rem;
+        gap: 1.25rem;
+        flex-direction: column;
+        justify-content: center;
+
+        & > * {
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h3 {
+            font-size: 2.4rem;
+            display: flex;
+            align-items: center;
+            transition: var(--h-s);
+            color: var(--secondary-text);
+            text-align: left;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            max-width: 48ch;
+            font-size: clamp(1.4rem, 6vw, 1.8rem);
+            line-height: 2rem;
+            text-wrap: balance;
+            text-align: left;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        li {
+            list-style: none;
+            color: var(--tertiary-text);
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+                padding: 0.25rem 0.6rem;
+                border-radius: 1rem;
+                font-size: 1.1rem;
+                text-shadow: -2px 2px 2px rgba(0, 0, 0, 1);
+                color: #fff;
+
+                .svg {
+                    height: 1.48rem;
+                    aspect-ratio: 1;
+                    margin-right: 0.16rem;
+                }
+
+                .svg__link {
+                    height: 2.25rem;
+                    aspect-ratio: 1;
+                    transition: var(--f-h-s);
+                    font-family: none;
+                }
+
+                &.ASTRO {
+                    background: #2c2052;
+                }
+
+                &.PHP {
+                    background: #626595;
+                }
+
+                &.CSS {
+                    background: #52297b;
+                }
+
+                &.JS {
+                    background: #3e3e0a;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+            border: 2px solid var(--primary-text);
+            box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
+            -webkit-box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
+            -moz-box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
+        }
+    }
+</style>

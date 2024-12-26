@@ -1,0 +1,36 @@
+---
+const { href } = Astro.props;
+---
+
+<a href={href} class="LinkButton">
+    <slot />
+</a>
+
+<style>
+    .LinkButton {
+        display: flex;
+        align-items: center;
+        color: var(--tertiary-text);
+        gap: 0.4rem;
+        font-size: clamp(1.1rem, 3vw, 1.28rem);
+        transition: var(--f-h-s);
+        background: var(--background-header);
+        border-radius: 1.6rem;
+        padding: 0.4rem 0.6rem;
+        box-shadow: 0 16px 20px -10px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 16px 20px -10px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 16px 20px -10px rgba(0, 0, 0, 0.6);
+
+        .svg__link {
+            height: 1.8rem;
+            aspect-ratio: 1;
+            transition: var(--f-h-s);
+            font-family: none;
+        }
+    }
+    .LinkButton:hover {
+        color: var(--secondary-text);
+        --primary-text: var(--secondary-text);
+        background: var(--hover);
+    }
+</style>
