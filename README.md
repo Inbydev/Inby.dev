@@ -2,7 +2,7 @@
 
 ![imagen](https://github.com/Inbydev/Inby.dev/assets/139036190/6965f94d-013f-460e-a3d2-50910873e3c4)
 
-## Projects:
+## Projects
 -   [InNotesBy](https://github.com/Inbydev/InNotesBy)
 
 ## Contributing
