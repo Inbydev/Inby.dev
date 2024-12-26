@@ -18,5 +18,5 @@ pnpm-debug.log*
 .env
 .env.production
 
-# old things
+# old files
 old/
