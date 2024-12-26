@@ -1,0 +1,61 @@
+---
+import CCIconLogo from "./icons/copyright-icons/CCIconLogo.astro";
+import CCIconBy from "./icons/copyright-icons/CCIconBy.astro";
+---
+
+<footer>
+    <a class="link-to-inbydev" href="https://github.com/Inbydev/Inby.dev"
+        >Inby.dev</a
+    >
+    <a
+        class="link-to-license"
+        href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
+        target="_blank"
+        >CC BY 4.0
+    </a>
+    <span class="cc-icons-container">
+        <span class="cc-icon">
+            <CCIconLogo />
+        </span>
+        <span class="cc-icon">
+            <CCIconBy />
+        </span>
+    </span>
+</footer>
+
+<style>
+    footer {
+        background: var(--background-header);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.4rem 0;
+        gap: 1rem;
+
+        a {
+            font-size: clamp(1rem, 4vw, 1.6rem);
+            padding: 0 0 0.48rem 0;
+            text-shadow: -2.8px 2.8px 2px rgba(0, 0, 0, 1);
+        }
+
+        .link-to-inbydev,
+        .link-to-inbydev:visited {
+            color: var(--tertiary-text);
+        }
+
+        .link-to-license {
+            display: inline-block;
+            color: var(--primary-text);
+        }
+
+        .cc-icons-container {
+            display: flex;
+            gap: 0.48rem;
+
+            svg {
+                height: 1.82rem;
+                aspect-ratio: 1;
+            }
+        }
+    }
+</style>
