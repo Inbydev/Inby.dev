@@ -1,0 +1,101 @@
+---
+import IcoStack from "./icons/icoStack.astro";
+import IcoProjects from "./icons/icoProjects.astro";
+---
+
+<header class="header">
+    <nav>
+        <ul class="header__box">
+            <li class="header__items">
+                <a class="header__link" href="#proyects" aria-label="Proyects">
+                    <IcoProjects />
+                </a>
+            </li>
+            <li class="header__items">
+                <a class="header__link" href="#about-me" aria-label="About-me">
+                    <h2 class="header__logo">Inby</h2>
+                </a>
+            </li>
+            <li class="header__items">
+                <a class="header__link" href="#stack" aria-label="Stack">
+                    <IcoStack />
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .header {
+        width: 100%;
+        height: 8lvh;
+        min-height: 4.6rem;
+        z-index: 4;
+        position: fixed;
+        border-style: none;
+        background: rgba(18, 0, 28, 0.96);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: all var(--h-s);
+
+        .header__box {
+            height: 8lvh;
+            min-height: 4.6rem;
+            gap: clamp(1.6rem, 10vw, 4rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            list-style: none;
+
+            .header__link {
+                font-size: 2rem;
+                color: var(--primary-text);
+                transition: 0.2s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg,
+                svg path {
+                    width: clamp(2rem, 8vh, 2.4rem);
+                    transition: 0.2s ease;
+                }
+
+                .fill:hover {
+                    fill: var(--hover);
+                }
+
+                .stroke:hover path {
+                    stroke: var(--hover);
+                }
+
+                .header__logo {
+                    font-size: 3.4rem;
+                    text-shadow: none;
+                    font-weight: 100;
+                    font-family: "FleurDeLeah";
+                    background: linear-gradient(
+                        to right,
+                        #d3ffce,
+                        var(--secondary-text),
+                        var(--tertiary-text)
+                    );
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-size: 200%;
+                    color: transparent;
+                    transition: background 0.2s ease;
+                    width: 8rem;
+
+                    &:hover {
+                        background-position-x: -2em;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+</style>
