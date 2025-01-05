@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackgroundErrorPage from "../components/Background_error_page.astro";
+---
+
+<Layout
+    title="Inby ❤ Error 404"
+    description="Página no encontrada"
+    descriptive_title="Inbydev Error 404"
+>
+    <BackgroundErrorPage slot="Background" />
+    <main>
+        <section class="full-section">
+            <h2>Página <span>no encontrada!</span></h2>
+            <a class="back-to-portfolio" href="/" data-astro-prefetch="tap"
+                >Volver a la página principal:</a
+            >
+        </section>
+    </main>
+</Layout>
+
+<style>
+    section {
+        gap: 1rem;
+    }
+
+    h2 {
+        font-size: clamp(2rem, 9.5vw, 4.8rem);
+        max-width: 20ch;
+    }
+
+    h2 span {
+        background: linear-gradient(to right, #87cafa, #878cfa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .back-to-portfolio {
+        font-size: clamp(1rem, 4svw, 2rem);
+        cursor: pointer;
+        color: var(--tertiary-text);
+    }
+</style>

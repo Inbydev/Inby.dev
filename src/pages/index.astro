@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Background from "../components/Background.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Projects from "../components/Projects.astro";
+import Technologies from "../components/Technologies.astro";
+---
+
+<Layout
+    title="Inby ❤"
+    description="Portafolio de Inbydev. Desarrollador Full Stack de PHP, HTML, CSS, JS, Astro, Python, SQlite y Markdown con 2 años de experiencia y creador del proyecto InNotesBy e ImageToWebp."
+    descriptive_title="Portafolio de Inbydev"
+>
+    <Background slot="Background" />
+    <Header />
+    <main>
+        <section class="full-section" id="about-me">
+            <h1>Inby</h1>
+            <div class="about-me">
+                <h2>Desarrollador <span>Web</span></h2>
+                <p>
+                    <span>Desarrollador y Diseñador Web</span> con conocimientos
+                    de PHP, HTML, CSS, JS, Astro, Python y creador del proyecto <span
+                        class="important-text">InNotesBy</span
+                    >, <span class="important-text">movie-with-you</span> e <span
+                        class="important-text">ImageToWebp</span
+                    >.
+                </p>
+            </div>
+        </section>
+
+        <section class="proyects__section" id="proyects">
+            <h2>Proyectos</h2>
+            <div class="proyects__container">
+                <Projects />
+            </div>
+        </section>
+
+        <section class="stack__section full-section" id="stack">
+            <h2>Tecnologías</h2>
+            <Technologies />
+        </section>
+    </main>
+
+    <Footer slot="Footer" />
+</Layout>
+
+<style>
+    h1 {
+        font-size: clamp(100% - 0.125rem, 28vw, 8.8rem);
+        position: relative;
+        font-weight: 100;
+        inset: -2rem 0 0 0;
+        width: 100%;
+        font-family: "FleurDeLeah";
+        background: linear-gradient(
+            to right,
+            #d3ffce 40%,
+            var(--secondary-text) 60%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    h1::before {
+        position: absolute;
+        content: "";
+        background-image: url("/src/images/japanese.webp");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        z-index: -1;
+        opacity: 0.2;
+        inset: 1.02em 1.66em 0 0;
+        height: 0.74em;
+    }
+
+    h1::after {
+        position: absolute;
+        content: "";
+        background-image: url("/src/images/korean.webp");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        z-index: -1;
+        opacity: 0.2;
+        inset: 1.18em 0 0 2.4em;
+        height: 0.48em;
+    }
+
+    .about-me h2 {
+        font-size: clamp(100% - 20px, 9.5vw, 70px);
+    }
+
+    .about-me h2 span {
+        background: linear-gradient(to right, #c08bfd, #fca6fd);
+        -ebkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .about-me p {
+        max-width: 40ch;
+        text-wrap: balance;
+        text-align: center;
+    }
+
+    .about-me span {
+        color: var(--secondary-text);
+    }
+
+    .about-me .important-text {
+        color: var(--tertiary-text);
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+    }
+
+    .stack__section {
+        gap: 2rem;
+        margin: 4rem 1rem 2rem 1rem;
+        min-height: 48rem;
+        height: 100dvh;
+        max-height: 50rem;
+        align-content: start;
+    }
+
+    @media (max-width: 768px) {
+        .proyects__section {
+            margin: 0 0 2rem;
+        }
+
+        .stack__section {
+            margin: 4rem 0 2rem 0;
+        }
+    }
+</style>
