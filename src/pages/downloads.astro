@@ -1,0 +1,205 @@
+---
+import Layout from "../layouts/Layout-app-repository.astro";
+import Header from "../components/Header-app-repository.astro";
+
+// Define interface for app data structure
+interface App {
+    name: string;
+    description: string;
+    downloadUrl: string;
+    iconUrl: string;
+    lastUpdate: string;
+    gradientColors: {
+        primary: string;
+        secondary: string;
+    };
+}
+
+// App data
+const apps: App[] = [
+    {
+        name: "Schildichat modified by Inbydev",
+        description:
+            "Cliente de mensajería basado en Matrix, enfocado en la simplicidad y la personalización modificado por inbydev.",
+        downloadUrl: "/downloads/apks/schildichat-arm64-v8a.apk",
+        iconUrl: "/src/components/icons/app-repository-icons/schildichat.svg",
+        lastUpdate: "15 Diciembre 2024",
+        gradientColors: {
+            primary: "#558B2F",
+            secondary: "#F9A825",
+        },
+    },
+    {
+        name: "Instagram",
+        description:
+            "Red social para compartir momentos a través de fotos, videos, historias y reels.",
+        downloadUrl: "/downloads/apks/instagram.apk",
+        iconUrl: "/src/components/icons/app-repository-icons/instagram.svg",
+        lastUpdate: "20 Diciembre 2024",
+        gradientColors: {
+            primary: "#1A237E",
+            secondary: "#C2185B",
+        },
+    },
+    {
+        name: "Symphony",
+        description:
+            "Symphony es un reproductor de música liviano y elegante que mejora tu experiencia musical sin conexión.",
+        downloadUrl: "/downloads/apks/Symphony.apk",
+        iconUrl: "/src/components/icons/app-repository-icons/symphony.svg",
+        lastUpdate: "10 Diciembre 2024",
+        gradientColors: {
+            primary: "#7E22CE",
+            secondary: "#0F172A",
+        },
+    },
+];
+---
+
+<Layout
+    title="Inby ❤ - Repositorio de apps"
+    description="Portafolio de Inbydev. Desarrollador Full Stack de PHP, HTML, CSS, JS, Astro, Python, SQlite y Markdown con 2 años de experiencia y creador del proyecto InNotesBy e ImageToWebp."
+    descriptive_title="Repositorio de apps de Inbydev"
+>
+    <Header />
+    <main>
+        <section class="apps-grid">
+            {
+                apps.map((app) => (
+                    <div
+                        class="app-card"
+                        style={`background: linear-gradient(135deg, ${app.gradientColors.primary}66, ${app.gradientColors.secondary}66)`}
+                    >
+                        <div
+                            class="app-icon"
+                            style={`background-image: url(${app.iconUrl})`}
+                        />
+                        <div class="app-content">
+                            <h2
+                                style={`color: ${app.gradientColors.secondary}`}
+                            >
+                                {app.name}
+                            </h2>
+                            <p>{app.description}</p>
+                            <div class="app-footer">
+                                <span class="update-date">
+                                    Última actualización: {app.lastUpdate}
+                                </span>
+                                <a
+                                    href={app.downloadUrl}
+                                    class="download-button"
+                                >
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </section>
+    </main>
+</Layout>
+
+<style>
+    body {
+        background-color: var(--background);
+        min-height: 100svh;
+        font-family: "Noto Sans Mono", sans-serif;
+    }
+
+    main {
+        padding: 6rem 1rem 2rem;
+    }
+
+    .apps-grid {
+        display: grid;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .apps-grid {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+    }
+
+    .app-card {
+        position: relative;
+        background-color: var(--color-card-bg);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+    }
+
+    .app-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .app-icon {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.2;
+        transform: rotate(-16deg);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .app-content {
+        position: relative;
+        padding: 1.5rem;
+        z-index: 1;
+    }
+
+    main h2,
+    main p,
+    main .update-date {
+        text-shadow: -2px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    main h2 {
+        font-size: 1.5rem;
+        min-height: 4rem;
+        color: var(--fallback-color-text);
+        margin-bottom: 0.75rem;
+    }
+
+    main p {
+        color: var(--secondary-color-text);
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        min-height: 6rem;
+    }
+
+    .app-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .update-date {
+        color: #a0ff8c;
+        font-size: 0.875rem;
+    }
+
+    .download-button {
+        display: inline-block;
+        background-color: var(--color-link-bg);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .download-button:hover {
+        background-color: var(--color-link-bg-hover);
+    }
+</style>

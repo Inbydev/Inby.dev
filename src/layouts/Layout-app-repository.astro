@@ -1,0 +1,76 @@
+---
+interface Props {
+    title: string;
+    descriptive_title: string;
+    description: string;
+}
+
+const { title, descriptive_title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="keywords"
+            content="Inby, Inbypage, Inbydev, Infi, Aliceki, Inbydev Portafolio, Inbydev Portfolio, Inbydev Páginas webs, Inbydev Websites, InNotesBy, Sobre inbydev, App repository, Inbydev app repository"
+        />
+        <meta name="description" content={description} />
+        <meta name="author" content="Inbydev" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#896db7" />
+        <meta name="generator" content={Astro.generator} />
+        <meta property="og:title" content={descriptive_title} />
+        <meta property="og:description" content={description} />
+        <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    @font-face {
+        font-family: "Noto Sans Mono";
+        src:
+            url("/src/fonts/NotoSansMono-Regular.woff2") format("woff2"),
+            url("/src/fonts/NotoSansMono-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "FleurDeLeah";
+        src:
+            url("/src/fonts/FleurDeLeah-Regular.woff2") format("woff2"),
+            url("/src/fonts/FleurDeLeah-Regular.ttf") format("truetype");
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+    }
+
+    :root {
+        --background: rgba(85, 26, 139, 0.6);
+        --background-header: rgba(85, 26, 139, 0.8);
+        --color-card-bg: #ffffff;
+        --color-heading: #ffffff;
+        --fallback-color-text: #4d0027;
+        --secondary-color-text: #fff;
+        --color-link-bg: #6b46c1;
+        --color-link-bg-hover: #5a3e9d;
+        --hover: #ff0083;
+        --a-s: 0.5s;
+        --h-s: 0.3s;
+        --f-h-s: 0.2s;
+    }
+</style>
