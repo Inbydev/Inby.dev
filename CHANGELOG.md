@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+#### v0.0.5
+> 07 Jan 2025
+- Added a repository page for my modified and frequently used apps.
+
 #### v0.0.4
 > 05 Jan 2025
 - Modify LICENSE from MIT to Apache-2.0
