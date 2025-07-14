@@ -11,6 +11,8 @@ import GITHUB from "./icons/technologies-icons/icoGITHUB.astro";
 import KRITA from "./icons/technologies-icons/icoKrita.astro";
 import PYTHON from "./icons/technologies-icons/icoPython.astro";
 import RUST from "./icons/technologies-icons/icoRust.astro";
+import TYPESCRIPT from "./icons/technologies-icons/icoTypeScript.astro";
+import C from "./icons/technologies-icons/icoC.astro";
 
 const TECHNOLOGIES = [
     {
@@ -24,9 +26,14 @@ const TECHNOLOGIES = [
         title: "HTML",
     },
     {
-        icon: RUST,
+        icon: C,
         section: "Aprendiendo",
-        title: "Rust",
+        title: "C",
+    },
+    {
+        icon: TYPESCRIPT,
+        section: "Aprendiendo",
+        title: "TypeScript",
     },
     {
         icon: ASTRO,
@@ -37,6 +44,11 @@ const TECHNOLOGIES = [
         icon: JS,
         section: "Aprendiendo",
         title: "JavaScript",
+    },
+    {
+        icon: RUST,
+        section: "Aprendiendo",
+        title: "Rust",
     },
     {
         icon: PHP,
@@ -72,7 +84,7 @@ const TECHNOLOGIES = [
         icon: KRITA,
         section: "Herramientas",
         title: "Krita",
-    },
+    }
 ];
 ---
 
@@ -104,42 +116,42 @@ const TECHNOLOGIES = [
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         justify-items: center;
+    }
 
-        div {
-            border: 3px solid var(--tertiary-text);
-            background: rgba(24, 2, 34, 0.8);
-            border-radius: 8px;
-            width: clamp(10.6rem, 40dvw, 20rem);
-            aspect-ratio: 1;
+    section div {
+        border: 3px solid var(--tertiary-text);
+        background: rgba(24, 2, 34, 0.8);
+        border-radius: 8px;
+        width: clamp(10.6rem, 40dvw, 20rem);
+        aspect-ratio: 1;
+    }
 
-            h3 {
-                font-size: clamp(1.2rem, 4.8dvw, 2rem);
-            }
+    section h3 {
+        font-size: clamp(1.2rem, 4.8dvw, 2rem);
+    }
 
-            ul {
-                list-style: none;
-                margin: 1rem;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: clamp(2rem, 4.8dvw, 2.4rem);
+    section ul {
+        list-style: none;
+        margin: 1rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: clamp(2rem, 4.8dvw, 2.4rem);
+    }
 
-                li {
-                    width: clamp(2.6rem, 8dvw, 3rem);
-                    position: relative;
+    section ul li {
+        width: clamp(2.6rem, 8dvw, 3rem);
+        position: relative;
+    }
 
-                    svg {
-                        width: 48px;
-                        aspect-ratio: 1;
-                    }
+    section ul li svg {
+        width: 48px;
+        aspect-ratio: 1;
+    }
 
-                    &:hover .popup-title {
-                        opacity: 1;
-                        transform: translateX(-50%) translateY(-4px);
-                    }
-                }
-            }
-        }
+    section ul li:hover .popup-title {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
     }
 
     .popup-title {
@@ -150,7 +162,7 @@ const TECHNOLOGIES = [
         padding: 0.4rem 0.6rem 0.6rem 0.8rem;
         background: rgb(121, 40, 57);
         color: white;
-        font-size: 1.4rem;
+        font-size: 1.54rem;
         border-radius: 4px;
         white-space: nowrap;
         opacity: 0;
