@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+#### v0.0.10
+> 14 Jul 2025
+- Changed the about on index.astro to better fit of me of today
+- Deleted a line of CSS that was unnecesary
+- In technologies, updated the icon of Python and added the icons of C and Typescript of learning, organizing or ordening (?) the order of learning
+
 #### v0.0.9
 > 19 May 2025
 - Not using scss for now and just css without native css native
