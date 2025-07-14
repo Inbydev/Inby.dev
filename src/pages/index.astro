@@ -1,10 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Background from "../components/Background.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Projects from "../components/Projects.astro";
-import Technologies from "../components/Technologies.astro";
+import Layout from "@layouts/Layout.astro";
+import Background from "@components/Background.astro";
+import Header from "@components/Header.astro";
+import Projects from "@components/Projects.astro";
+import Technologies from "@components/Technologies.astro";
 ---
 
 <Layout
@@ -21,10 +20,10 @@ import Technologies from "../components/Technologies.astro";
                 <h2>Desarrollador <span>Web</span></h2>
                 <p>
                     <span>Desarrollador y Diseñador Web</span> con conocimientos
-                    de PHP, HTML, CSS, JS, Astro, Python y creador del proyecto <span
-                        class="important-text">InNotesBy</span
+                    de Astro, HTML, CSS, JavaScript, C, Rust, PHP y creador del proyecto <span
+                        class="important-text">music-on-rust</span
                     >, <span class="important-text">movie-with-you</span> e <span
-                        class="important-text">ImageToWebp</span
+                        class="important-text">InNotesBy</span
                     >.
                 </p>
             </div>
@@ -42,8 +41,6 @@ import Technologies from "../components/Technologies.astro";
             <Technologies />
         </section>
     </main>
-
-    <Footer slot="Footer" />
 </Layout>
 
 <style>
@@ -127,6 +124,17 @@ import Technologies from "../components/Technologies.astro";
         height: 100dvh;
         max-height: 50rem;
         align-content: start;
+    }
+
+    .proyects__section {
+        min-height: 50dvh;
+        margin: 0 4rem 0 4rem;
+    }
+
+    .proyects__section .proyects__container {
+        display: grid;
+        place-content: center;
+        gap: 2rem;
     }
 
     @media (max-width: 768px) {
