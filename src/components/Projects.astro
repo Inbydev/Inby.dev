@@ -6,6 +6,8 @@ import IcoJS from "./icons/icoJS.astro";
 import IcoGitHub from "./icons/icoGitHub.astro";
 import IcoWeb from "./icons/icoWeb.astro";
 import LinkButton from "./LinkButton.astro";
+import { Image } from "astro:assets";
+import first_screenshot from "@images/InNotesBy_screenshot.webp";
 
 const TAGS = {
     ASTRO: {
@@ -36,7 +38,7 @@ const PROJECTS = [
         description: "Para crear Notas para acceso público con PHP",
         link: "https://inby.dev/InNotesBy/",
         github: "https://github.com/Inbydev/InNotesBy",
-        image: "/src/images/InNotesBy_screenshot.webp",
+        image: first_screenshot,
         tags: [TAGS.PHP, TAGS.CSS, TAGS.JS],
     },
 ];
@@ -57,9 +59,10 @@ const PROJECTS = [
                     </li>
                 ))}
             </ul>
-            <img
+            <Image
                 src={image}
                 alt={`Captura de pantalla del proyecto ${title}`}
+                layout="constrained"
             />
             <footer class="footer">
                 <LinkButton href={github}>
@@ -75,19 +78,7 @@ const PROJECTS = [
     ))
 }
 
-<style is:inline>
-    .proyects__section {
-        gap: 2rem;
-        min-height: 50dvh;
-        margin: 0 4rem 0 4rem;
-    }
-
-    .proyects__container {
-        display: grid;
-        place-content: center;
-        gap: 2rem;
-    }
-
+<style>
     .project__article {
         padding: 1rem;
         display: flex;
@@ -96,100 +87,106 @@ const PROJECTS = [
         gap: 1.25rem;
         flex-direction: column;
         justify-content: center;
+    }
 
-        & > * {
-            margin: 0;
-            padding: 0;
-        }
+    .project__article > * {
+        margin: 0;
+        padding: 0;
+    }
 
-        footer {
-            background: transparent;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-        }
+    .project__article footer {
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .project__article footer .svg__link {
+        height: 2.25rem;
+        aspect-ratio: 1;
+        transition: var(--f-h-s);
+        font-family: none;
+    }
+    .project__article footer .svg__link g {
+        transition: var(--f-h-s);
+    }
 
-        h3 {
-            font-size: 2.4rem;
-            display: flex;
-            align-items: center;
-            transition: var(--h-s);
-            color: var(--secondary-text);
-            text-align: left;
-        }
+    .project__article footer .svg__link g path {
+        transition: var(--f-h-s);
+    }
 
-        p {
-            display: flex;
-            align-items: center;
-            max-width: 48ch;
-            font-size: clamp(1.4rem, 6vw, 1.8rem);
-            line-height: 2rem;
-            text-wrap: balance;
-            text-align: left;
-        }
+    .project__article h3 {
+        font-size: 2.4rem;
+        display: flex;
+        align-items: center;
+        transition: var(--h-s);
+        color: var(--secondary-text);
+        text-align: left;
+    }
 
-        ul {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+    .project__article p {
+        display: flex;
+        align-items: center;
+        max-width: 48ch;
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
+        line-height: 2rem;
+        text-wrap: balance;
+        text-align: left;
+    }
 
-        li {
-            list-style: none;
-            color: var(--tertiary-text);
+    .project__article ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
 
-            span {
-                display: flex;
-                align-items: center;
-                gap: 0.25rem;
-                padding: 0.25rem 0.6rem;
-                border-radius: 1rem;
-                font-size: 1.1rem;
-                text-shadow: -2px 2px 2px rgba(0, 0, 0, 1);
-                color: #fff;
+    .project__article li {
+        list-style: none;
+        color: var(--tertiary-text);
+    }
 
-                .svg {
-                    height: 1.48rem;
-                    aspect-ratio: 1;
-                    margin-right: 0.16rem;
-                }
+    .project__article li span {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 1rem;
+        font-size: 1.1rem;
+        text-shadow: -2px 2px 2px rgba(0, 0, 0, 1);
+        color: #fff;
+    }
 
-                .svg__link {
-                    height: 2.25rem;
-                    aspect-ratio: 1;
-                    transition: var(--f-h-s);
-                    font-family: none;
-                }
+    .project__article li .svg {
+        height: 1.48rem;
+        aspect-ratio: 1;
+        margin-right: 0.16rem;
+    }
 
-                &.ASTRO {
-                    background: #2c2052;
-                }
+    .project__article li span.ASTRO {
+        background: #2c2052;
+    }
 
-                &.PHP {
-                    background: #626595;
-                }
+    .project__article li span.PHP {
+        background: #626595;
+    }
 
-                &.CSS {
-                    background: #52297b;
-                }
+    .project__article li span.CSS {
+        background: #52297b;
+    }
 
-                &.JS {
-                    background: #3e3e0a;
-                }
-            }
-        }
+    .project__article li span.JS {
+        background: #3e3e0a;
+    }
 
-        img {
-            width: 100%;
-            object-fit: cover;
-            aspect-ratio: 16/9;
-            border-radius: 8px;
-            border: 2px solid var(--primary-text);
-            box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
-            -webkit-box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
-            -moz-box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
-        }
+    .project__article img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+        border: 2px solid var(--primary-text);
+        box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
+        -webkit-box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
+        -moz-box-shadow: 0 16px 20px -10px rgba(106, 35, 138, 0.4);
     }
 </style>
