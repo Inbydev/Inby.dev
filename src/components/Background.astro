@@ -1,67 +1,6 @@
-<div class="background">
-    <div class="grid">
-        <div class="scene">
-            <div class="pyramid">
-                <div class="face face1"></div>
-                <div class="face face2"></div>
-                <div class="face face3"></div>
-                <div class="face face4"></div>
-                <div class="face face5"></div>
-                <div class="face face6"></div>
-                <div class="face face7"></div>
-                <div class="face face8"></div>
-            </div>
-        </div>
-        <div class="scene">
-            <div class="pyramid">
-                <div class="face face1"></div>
-                <div class="face face2"></div>
-                <div class="face face3"></div>
-                <div class="face face4"></div>
-                <div class="face face5"></div>
-                <div class="face face6"></div>
-                <div class="face face7"></div>
-                <div class="face face8"></div>
-            </div>
-        </div>
-        <div class="scene">
-            <div class="pyramid">
-                <div class="face face1"></div>
-                <div class="face face2"></div>
-                <div class="face face3"></div>
-                <div class="face face4"></div>
-                <div class="face face5"></div>
-                <div class="face face6"></div>
-                <div class="face face7"></div>
-                <div class="face face8"></div>
-            </div>
-        </div>
-        <div class="scene">
-            <div class="pyramid">
-                <div class="face face1"></div>
-                <div class="face face2"></div>
-                <div class="face face3"></div>
-                <div class="face face4"></div>
-                <div class="face face5"></div>
-                <div class="face face6"></div>
-                <div class="face face7"></div>
-                <div class="face face8"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<style is:inline>
-    :root {
-        --size-of-piramide: 6.25rem;
-        --size-of-face: calc(var(--size-of-piramide) / 2);
-        --color1: #ff00ff;
-        --color2: #00ffff;
-        --color3: #00ff00;
-        --color4: #ff9900;
-        --color5: #ff3300;
-        --color6: #6600ff;
-    }
+<div class="background"></div>
 
+<style>
     .background {
         width: 100lvw;
         height: 100lvh;
@@ -77,26 +16,30 @@
             rgba(109, 40, 217, 0.6) 180%
         );
         overflow: hidden;
+    }
 
-        ::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            right: -50%;
-            bottom: -50%;
-            width: 200%;
-            height: 200%;
-            background: transparent;
-            background-image: repeating-conic-gradient(
-                #fff 0%,
-                transparent 0.00005%,
-                transparent 0.0001%,
-                transparent 0.00015%
-            );
-            opacity: 0.048;
-            animation: noise 12s steps(12) infinite;
-        }
+    .background canvas {
+        opacity: 0.8;
+    }
+
+    .background::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        right: -50%;
+        bottom: -50%;
+        width: 200%;
+        height: 200%;
+        background: transparent;
+        background-image: repeating-conic-gradient(
+            #fff 0%,
+            transparent 0.00005%,
+            transparent 0.0001%,
+            transparent 0.00015%
+        );
+        opacity: 0.048;
+        animation: noise 12s steps(12) infinite;
     }
 
     @keyframes noise {
@@ -107,164 +50,202 @@
             transform: translate(-24%, -24%);
         }
     }
-
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 0;
-        width: 100svw;
-        max-width: 80rem;
-        height: 100svh;
-        margin: 0 auto;
-    }
-
-    .scene {
-        width: 100%;
-        height: 100%;
-        perspective: 1500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        opacity: 0.4;
-        &:nth-child(1) .pyramid {
-            animation-delay: 0s;
-            top: 22svh;
-            left: 12svw;
-        }
-        &:nth-child(2) .pyramid {
-            animation-delay: -1s;
-            top: 35svh;
-            right: 9svw;
-        }
-        &:nth-child(3) .pyramid {
-            animation-delay: -2s;
-            bottom: 6svh;
-            left: 12svw;
-        }
-        &:nth-child(4) .pyramid {
-            animation-delay: -3s;
-            bottom: 8svh;
-            right: 16svw;
-        }
-    }
-
-    @keyframes rotatePyramid {
-        0% {
-            transform: rotateZ(0deg) rotateY(0deg);
-        }
-        100% {
-            transform: rotateZ(360deg) rotateY(360deg);
-        }
-    }
-
-    .pyramid {
-        width: var(--size-of-piramide);
-        height: var(--size-of-piramide);
-        position: absolute;
-        will-change: transform;
-        transform-style: preserve-3d;
-        animation: rotatePyramid 10s infinite linear;
-    }
-
-    @keyframes funkyEffects {
-        0% {
-            filter: brightness(1) contrast(1) grayscale(0);
-        }
-        25% {
-            filter: brightness(1.2) contrast(0.5) grayscale(0.48);
-        }
-        50% {
-            filter: brightness(0.8) contrast(2) grayscale(0.8);
-        }
-        75% {
-            filter: brightness(1.2) contrast(1) grayscale(0.2);
-        }
-        100% {
-            filter: brightness(1) contrast(1) grayscale(0);
-        }
-    }
-
-    .face {
-        position: absolute;
-        width: var(--size-of-piramide);
-        height: var(--size-of-piramide);
-        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-        transform-origin: 50% 100%;
-        transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
-        will-change: transform;
-        animation: funkyEffects 5s infinite ease-in-out;
-    }
-
-    .pyramid,
-    .face {
-        transform: translateZ(0); /* Forzar a usar una capa de composición */
-    }
-
-    .face1 {
-        background-color: #5a639c;
-        transform: translateX(0) translateY(calc(-1 * var(--size-of-piramide)))
-            translateZ(calc(-1 * var(--size-of-face))) rotateX(-120deg);
-    }
-
-    .face2 {
-        background-color: #7776b3;
-        transform: translateX(calc(-1 * var(--size-of-face)))
-            translateY(calc(-1 * var(--size-of-face)))
-            translateZ(calc(-1 * var(--size-of-face))) rotateZ(90deg)
-            rotateX(-60deg);
-    }
-
-    .face3 {
-        background-color: #9b86bd;
-        transform: translateX(var(--size-of-face))
-            translateY(calc(-1 * var(--size-of-face)))
-            translateZ(calc(-1 * var(--size-of-face))) rotateZ(-90deg)
-            rotateX(-60deg);
-    }
-
-    .face4 {
-        background-color: #e2bbe9;
-        transform: translateX(0) translateY(0)
-            translateZ(calc(-1 * var(--size-of-face))) rotateX(60deg);
-    }
-
-    .face5 {
-        background-color: #9b86bd;
-        transform: translateX(0) translateY(0)
-            translateZ(calc(-1 * var(--size-of-face))) rotateX(-60deg);
-    }
-
-    .face6 {
-        background-color: #e2bbe9;
-        transform: translateX(var(--size-of-face))
-            translateY(calc(-1 * var(--size-of-face)))
-            translateZ(calc(-1 * var(--size-of-face))) rotateZ(-90deg)
-            rotateX(60deg);
-    }
-
-    .face7 {
-        background-color: #5a639c;
-        transform: translateX(calc(-1 * var(--size-of-face)))
-            translateY(calc(-1 * var(--size-of-face)))
-            translateZ(calc(-1 * var(--size-of-face))) rotateZ(90deg)
-            rotateX(60deg);
-    }
-
-    .face8 {
-        background-color: #7776b3;
-        transform: translateX(0) translateY(calc(-1 * var(--size-of-piramide)))
-            translateZ(calc(-1 * var(--size-of-face))) rotateX(120deg);
-    }
-
-    @media (max-width: 768px) {
-        :root {
-            --size-of-piramide: 4.8rem;
-        }
-
-        .grid {
-            display: none;
-        }
-    }
 </style>
+
+<script>
+    // Import necessary Three.js classes with types
+    import {
+        Scene,
+        PerspectiveCamera,
+        WebGLRenderer,
+        AmbientLight,
+        DirectionalLight,
+        OctahedronGeometry,
+        MeshStandardMaterial,
+        Mesh,
+        Group,
+        Clock,
+        Color,
+    } from "three";
+
+    // Functions with ': void' annotation return no value (void)
+    // Set up container, scene, camera, and renderer
+    type HTMLDiv = HTMLDivElement;
+    const container = document.querySelector<HTMLDiv>(".background")!; // assert non-null container
+    const scene = new Scene();
+    const camera = new PerspectiveCamera(
+        45,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000,
+    );
+    camera.position.set(0, 0, 13);
+    camera.lookAt(scene.position);
+    const renderer = new WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.domElement.style.position = "absolute";
+    container.appendChild(renderer.domElement);
+
+    // Add lights to the scene
+    scene.add(new AmbientLight(0xffffff, 0.5));
+    const directionalLight = new DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(5, 10, 7.5);
+    scene.add(directionalLight);
+
+    // Function to create octahedron geometry with explicit return type
+    type OctGeometry = OctahedronGeometry;
+    function createOctahedronGeometry(size: number): OctGeometry {
+        return new OctahedronGeometry(size);
+    }
+
+    // Define face colors and materials with explicit types
+    type ColorArray = number[];
+    const faceColors: ColorArray = [
+        0x5a639c, 0x7776b3, 0x9b86bd, 0xe2bbe9, 0x9b86bd, 0xe2bbe9, 0x5a639c,
+        0x7776b3,
+    ];
+    const materials: MeshStandardMaterial[] = faceColors.map(
+        (color: number) =>
+            new MeshStandardMaterial({ color, flatShading: true }), // typed material array
+    );
+
+    // Build base octahedron mesh with grouped faces
+    const octGeometry = createOctahedronGeometry(1.5);
+    octGeometry.clearGroups();
+    for (let i = 0; i < materials.length; i++) {
+        octGeometry.addGroup(i * 3, 3, i);
+    }
+    const baseOctahedronMesh = new Mesh(octGeometry, materials);
+
+    // Layout positions with TypeScript interface for explicit typing
+    interface LayoutItem {
+        xGrid: number;
+        yGrid: number;
+        z: number;
+        delay: number;
+    }
+    const layoutItems: LayoutItem[] = [
+        { xGrid: -0.6, yGrid: -0.6, z: -1, delay: 0 },
+        { xGrid: 0.54, yGrid: -0.7, z: -1, delay: -0.7 },
+        { xGrid: -0.6, yGrid: 0.6, z: -2, delay: -2 },
+        { xGrid: 0.54, yGrid: 0.7, z: -2, delay: -2.7 },
+    ];
+
+    // Create groups of octahedrons for animation
+    const octahedrons: Group[] = []; // renamed from pyramids
+    layoutItems.forEach(({ z, delay }) => {
+        const meshClone = baseOctahedronMesh.clone() as Mesh; // clone typed as Mesh
+        const group = new Group();
+        group.add(meshClone);
+        group.position.set(0, 0, z);
+        group.userData.delay = delay;
+        scene.add(group);
+        octahedrons.push(group);
+    });
+
+    // Adjust scale based on window width
+    function updateScales(): void {
+        const minScale = 0.7;
+        const maxScale = 1.0;
+        const scale = Math.max(
+            minScale,
+            Math.min(maxScale, window.innerWidth / 1440),
+        );
+        octahedrons.forEach((g: Group) => g.scale.setScalar(scale));
+    }
+
+    // Position octahedrons based on aspect ratio
+    function updatePositions(): void {
+        const aspectRatio = container.clientWidth / container.clientHeight;
+        octahedrons.forEach((group: Group, i: number) => {
+            const { xGrid, yGrid, z } = layoutItems[i];
+            group.position.x = xGrid * 6 * aspectRatio;
+            group.position.y = yGrid * 4.5;
+            group.position.z = z;
+        });
+    }
+
+    // Animation loop with typed emissive material
+    const clock = new Clock();
+    function animate(): void {
+        requestAnimationFrame(animate);
+        const elapsed = clock.getElapsedTime();
+
+        octahedrons.forEach((group: Group, index: number) => {
+            const dt: number = elapsed - group.userData.delay;
+            if (dt <= 0) return;
+
+            group.rotation.z = dt * 0.4;
+            group.rotation.y = dt * 0.4;
+
+            // Floating effect
+            group.position.x += Math.sin(dt + index) * 1.7 * 0.005;
+            group.position.y += Math.cos(dt + index) * 1.7 * 0.003;
+
+            // Visual filter simulation (brightness, contrast, grayscale)
+            const mesh = group.children[0] as Mesh;
+            const mats = mesh.material as MeshStandardMaterial[];
+            // Cycle through CSS-like keyframes over 4 seconds
+            const cycleDuration = 4; // seconds
+            const progress = (dt % cycleDuration) / cycleDuration;
+            let brightness: number, contrast: number, grayscale: number;
+            if (progress < 0.25) {
+                const t = progress / 0.25;
+                brightness = 1 + (1.2 - 1) * t; // 1 → 1.2
+                contrast = 1 + (0.5 - 1) * t; // 1 → 0.5
+                grayscale = 0.48 + (0.6 - 0.48) * t; // 0.48 → 0.6
+            } else if (progress < 0.5) {
+                const t = (progress - 0.25) / 0.25;
+                brightness = 1.2 + (0.8 - 1.2) * t; // 1.2 → 0.8
+                contrast = 0.5 + (2 - 0.5) * t; // 0.5 → 2
+                grayscale = 0.6 + (0.8 - 0.6) * t; // 0.6 → 0.8
+            } else if (progress < 0.75) {
+                const t = (progress - 0.5) / 0.25;
+                brightness = 0.8 + (1.2 - 0.8) * t; // 0.8 → 1.2
+                contrast = 2 + (1 - 2) * t; // 2 → 1
+                grayscale = 0.8 + (0.6 - 0.8) * t; // 0.8 → 0.6
+            } else {
+                const t = (progress - 0.75) / 0.25;
+                brightness = 1.2 + (1 - 1.2) * t; // 1.2 → 1
+                contrast = 1; // stays at 1
+                grayscale = 0.6 + (0.48 - 0.6) * t; // 0.6 → 0.48
+            }
+            // Apply to each face material
+            mats.forEach((material: MeshStandardMaterial) => {
+                // Brightness: scale color
+                const baseColor =
+                    (material as any)._originalColor || material.color.clone();
+                if (!(material as any)._originalColor)
+                    (material as any)._originalColor = baseColor.clone();
+                material.color
+                    .copy((material as any)._originalColor)
+                    .multiplyScalar(brightness);
+                // Contrast: use emissive intensity as stand-in
+                material.emissiveIntensity = contrast;
+                // Grayscale: lerp towards luminance
+                const lum =
+                    material.color.r * 0.2126 +
+                    material.color.g * 0.7152 +
+                    material.color.b * 0.0722;
+                material.color.lerp(new Color(lum, lum, lum), grayscale);
+            });
+        });
+
+        renderer.render(scene, camera);
+    }
+
+    // Handle window resize events
+    window.addEventListener("resize", (): void => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        updateScales();
+        updatePositions();
+    });
+
+    // Initial setup and start animation
+    updateScales();
+    updatePositions();
+    animate();
+</script>
