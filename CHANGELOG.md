@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+#### v0.0.9
+> 19 May 2025
+- Not using scss for now and just css without native css native
+- Mantained the deletion about is:inline for less space and better use of css
+
+#### v0.0.8
+> 16 May 2025
+- Using scss passibly for css nesting to normal css (more compatible)
+- Removed background for error pages (now uses the normal background thanks to Three.js compatability)
+- Deleted is:inline for scss preprocessor
+
+#### v0.0.7
+> 15 May 2025
+- Imported only the necessary Three.js modules for less space on build
+- Added color filters/effects on the octahedrons
+
+#### v0.0.6
+> 14 May 2025
+- Changed background from 3DCSS to Three.js library
+- Added different responsive sizes on the Images on the Project Section
+- Added dynamic Sitemap from astro
+- Added dynamic Robots from astro
+- Added aliases/paths for cleaner code
+- Fixed svg not showing on app repository from build with astro
+- Fixed octaedros from canvas jumping around for the vh or lvh or svh property
+
 #### v0.0.5
 > 07 Jan 2025
 - Added a repository page for my modified and frequently used apps.
