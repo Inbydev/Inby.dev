@@ -38,48 +38,48 @@ import IcoGoBack from "./icons/icoGoBack.astro";
         background: var(--background-header);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         transition: all var(--h-s);
+    }
 
-        .header__box {
-            height: 8lvh;
-            min-height: 4.6rem;
-            gap: clamp(1.6rem, 10vw, 4rem);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            list-style: none;
+    .header .header__box {
+        height: 8lvh;
+        min-height: 4.6rem;
+        gap: clamp(1.6rem, 10vw, 4rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        list-style: none;
+    }
 
-            .header__link {
-                font-size: 2rem;
-                color: var(--primary-text);
-                transition: 0.2s ease;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
+    .header .header__box .header__link {
+        font-size: 2rem;
+        color: var(--primary-text);
+        transition: 0.2s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
 
-                svg,
-                svg path {
-                    width: clamp(2rem, 8vh, 2.4rem);
-                    transition: 0.2s ease;
-                }
+    .header .header__box .header__link svg,
+    .header .header__box .header__link svg path {
+        width: clamp(2rem, 8vh, 2.4rem);
+        transition: 0.2s ease;
+    }
 
-                svg:hover,
-                svg:hover #SVGRepo_iconCarrier path {
-                    fill: var(--hover);
-                }
+    .header .header__box .header__link svg:hover,
+    .header .header__box svg:hover #SVGRepo_iconCarrier path {
+        fill: var(--hover);
+    }
 
-                &:hover {
-                    cursor: pointer;
-                }
-            }
+    &:hover {
+        cursor: pointer;
+    }
 
-            h1 {
-                color: #fff;
-                font-size: 2rem;
-                text-align: center;
-            }
-        }
+    h1 {
+        color: #fff;
+        font-size: 2rem;
+        text-align: center;
     }
 
     @media (max-width: 680px) {
