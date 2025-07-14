@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout-app-repository.astro";
-import Header from "../components/Header-app-repository.astro";
+import Layout from "@layouts/Layout-app-repository.astro";
+import Header from "@components/Header-app-repository.astro";
 
 // Define interface for app data structure
 interface App {
@@ -22,7 +22,7 @@ const apps: App[] = [
         description:
             "Cliente de mensajería basado en Matrix, enfocado en la simplicidad y la personalización modificado por inbydev.",
         downloadUrl: "/downloads/apks/schildichat-arm64-v8a.apk",
-        iconUrl: "/src/components/icons/app-repository-icons/schildichat.svg",
+        iconUrl: "/assets/app-repository-icons/schildichat.svg",
         lastUpdate: "01 Enero 2025",
         gradientColors: {
             primary: "#558B2F",
@@ -34,7 +34,7 @@ const apps: App[] = [
         description:
             "Red social para compartir momentos a través de fotos, videos, historias y reels.",
         downloadUrl: "/downloads/apks/instagram-arm64-v8a.apk",
-        iconUrl: "/src/components/icons/app-repository-icons/instagram.svg",
+        iconUrl: "/assets/app-repository-icons/instagram.svg",
         lastUpdate: "19 Diciembre 2024",
         gradientColors: {
             primary: "#1A237E",
@@ -46,7 +46,7 @@ const apps: App[] = [
         description:
             "Symphony es un reproductor de música liviano y elegante que mejora tu experiencia musical sin conexión.",
         downloadUrl: "/downloads/apks/Symphony.apk",
-        iconUrl: "/src/components/icons/app-repository-icons/symphony.svg",
+        iconUrl: "/assets/app-repository-icons/symphony.svg",
         lastUpdate: "21 Diciembre 2024",
         gradientColors: {
             primary: "#7E22CE",
