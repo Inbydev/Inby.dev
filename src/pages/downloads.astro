@@ -23,7 +23,7 @@ const apps: App[] = [
             "Cliente de mensajería basado en Matrix, enfocado en la simplicidad y la personalización modificado por inbydev.",
         downloadUrl: "/downloads/apks/schildichat-arm64-v8a.apk",
         iconUrl: "/assets/app-repository-icons/schildichat.svg",
-        lastUpdate: "01 Enero 2025",
+        lastUpdate: "09 Agosto 2025",
         gradientColors: {
             primary: "#558B2F",
             secondary: "#F9A825",
@@ -35,7 +35,7 @@ const apps: App[] = [
             "Red social para compartir momentos a través de fotos, videos, historias y reels.",
         downloadUrl: "/downloads/apks/instagram-arm64-v8a.apk",
         iconUrl: "/assets/app-repository-icons/instagram.svg",
-        lastUpdate: "19 Diciembre 2024",
+        lastUpdate: "07 Agosto 2025",
         gradientColors: {
             primary: "#1A237E",
             secondary: "#C2185B",
@@ -53,6 +53,17 @@ const apps: App[] = [
             secondary: "#0F172A",
         },
     },
+    {
+        name: "Birday",
+        description: "Registra y recuerda cumpleaños y fechas especiales.",
+        downloadUrl: "/downloads/apks/Birday.apk",
+        iconUrl: "/assets/app-repository-icons/birday.png",
+        lastUpdate: "08 Agosto 2025",
+        gradientColors: {
+            primary: "#6B7280",
+            secondary: "#4B6450",
+        },
+    }
 ];
 ---
 
@@ -83,7 +94,7 @@ const apps: App[] = [
                             <p>{app.description}</p>
                             <div class="app-footer">
                                 <span class="update-date">
-                                    Última actualización: {app.lastUpdate}
+                                    Última actualización / Compilación: {app.lastUpdate}
                                 </span>
                                 <a
                                     href={app.downloadUrl}
@@ -139,8 +150,7 @@ const apps: App[] = [
 
     .app-icon {
         position: absolute;
-        width: 120%;
-        height: 120%;
+        width: 21rem;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -148,6 +158,10 @@ const apps: App[] = [
         transform: rotate(-16deg);
         pointer-events: none;
         z-index: 0;
+        border-radius: 4rem;
+        aspect-ratio: 1;
+        right: -2rem;
+        bottom: -2rem;
     }
 
     .app-content {
