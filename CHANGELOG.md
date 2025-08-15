@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+#### v0.0.15
+> 08 Aug 2025 05:09PM
+- Updated SchildiChat to the Inbydev app repository or downloads page
+
+#### v0.0.14
+> 08 Aug 2025 05:09PM
+- Added birday to the Inbydev app repository or downloads page
+
+#### v0.0.13
+> 07 Aug 2025 01:06AM
+- Updated the SchildiChat modified by Inbydev on downloads page / app repository page on this Project / Portafolio, "Inby.dev".
+
+#### v0.0.12
+> 28 Jul 2025 05:24AM (I don't know if 05:24AM or 05:24 AM, the more formal or more professional about that).
+- Change the grid column template of technologies so now its better for mobile devices and fixed a bunch of things on Technologies.astro and index.astro for the grid layout bug on change, fixed with margin and another magic things that I will write tomorrow, just maybe.
+
+#### v0.0.11
+> 27 Jul 2025
+- In technologies, added the icons of C# and Godot of learning
+
 #### v0.0.10
 > 14 Jul 2025
 - Changed the about on index.astro to better fit of me of today
@@ -11,7 +31,7 @@ All notable changes to this project will be documented in this file.
 
 #### v0.0.9
 > 19 May 2025
-- Not using scss for now and just css without native css native
+- Not using scss for now and just css without native css native nesting
 - Mantained the deletion about is:inline for less space and better use of css
 
 #### v0.0.8
