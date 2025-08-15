@@ -20,3 +20,6 @@ pnpm-debug.log*
 
 # old files from website
 old/
+
+# deploy inbydev portfolio rust port binary
+deploy-inbydev-portfolio-rust-port
