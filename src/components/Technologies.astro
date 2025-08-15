@@ -13,6 +13,8 @@ import PYTHON from "./icons/technologies-icons/icoPython.astro";
 import RUST from "./icons/technologies-icons/icoRust.astro";
 import TYPESCRIPT from "./icons/technologies-icons/icoTypeScript.astro";
 import C from "./icons/technologies-icons/icoC.astro";
+import GODOT from "./icons/technologies-icons/icoGodot.astro";
+import CSHARP from "./icons/technologies-icons/icoCSharp.astro";
 
 const TECHNOLOGIES = [
     {
@@ -39,6 +41,16 @@ const TECHNOLOGIES = [
         icon: ASTRO,
         section: "Aprendiendo",
         title: "Astro",
+    },
+    {
+        icon: GODOT,
+        section: "Aprendiendo",
+        title: "Godot",
+    },
+    {
+        icon: CSHARP,
+        section: "Aprendiendo",
+        title: "C#",
     },
     {
         icon: JS,
@@ -113,21 +125,26 @@ const TECHNOLOGIES = [
 <style>
     section {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
         gap: 2rem;
         justify-items: center;
+        justify-content: center;
+        max-width: 44rem;
+        padding: 1.7rem 0.7rem;
+        margin: auto;
     }
 
     section div {
         border: 3px solid var(--tertiary-text);
         background: rgba(24, 2, 34, 0.8);
         border-radius: 8px;
-        width: clamp(10.6rem, 40dvw, 20rem);
+        width: clamp(16rem, 90dvw, 20rem);
         aspect-ratio: 1;
     }
 
     section h3 {
-        font-size: clamp(1.2rem, 4.8dvw, 2rem);
+        font-size: 2rem;
+        padding: 0.4rem 0;
     }
 
     section ul {
@@ -136,16 +153,18 @@ const TECHNOLOGIES = [
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: clamp(2rem, 4.8dvw, 2.4rem);
+        gap: clamp(1.7rem, 8.8dvw, 2.4rem);
     }
 
     section ul li {
-        width: clamp(2.6rem, 8dvw, 3rem);
+        width: 3rem;
         position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     section ul li svg {
-        width: 48px;
+        width: clamp(2.6rem, 14dvw, 3rem);
         aspect-ratio: 1;
     }
 
@@ -162,24 +181,13 @@ const TECHNOLOGIES = [
         padding: 0.4rem 0.6rem 0.6rem 0.8rem;
         background: rgb(121, 40, 57);
         color: white;
-        font-size: 1.54rem;
+        font-size: clamp(1.2rem, 6dvw, 1.54rem);
         border-radius: 4px;
         white-space: nowrap;
         opacity: 0;
         pointer-events: none;
         transition:
-            opacity 0.24s,
-            transform 0.24s;
-    }
-
-    @media (max-width: 480px) {
-        section {
-            gap: 1rem;
-        }
-
-        section div ul {
-            margin: 0 1rem;
-            gap: 1rem clamp(2rem, 4.8dvw, 2.4rem);
-        }
+            opacity 0.19s,
+            transform 0.19s;
     }
 </style>

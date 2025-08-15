@@ -36,7 +36,7 @@ import Technologies from "@components/Technologies.astro";
             </div>
         </section>
 
-        <section class="stack__section full-section" id="stack">
+        <section class="stack__section" id="stack">
             <h2>Tecnologías</h2>
             <Technologies />
         </section>
@@ -119,11 +119,11 @@ import Technologies from "@components/Technologies.astro";
 
     .stack__section {
         gap: 2rem;
-        margin: 4rem 1rem 2rem 1rem;
+        margin: 4rem 0 2rem 0;
         min-height: 48rem;
         height: 100dvh;
         max-height: 50rem;
-        align-content: start;
+        height: 100svh;
     }
 
     .proyects__section {
@@ -140,10 +140,6 @@ import Technologies from "@components/Technologies.astro";
     @media (max-width: 768px) {
         .proyects__section {
             margin: 0 0 2rem;
-        }
-
-        .stack__section {
-            margin: 4rem 0 2rem 0;
         }
     }
 </style>
