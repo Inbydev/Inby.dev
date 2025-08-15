@@ -1,18 +1,15 @@
 {
-  "name": "astro",
-  "type": "module",
-  "version": "0.0.15",
-  "scripts": {
-    "astro dev": "astro dev",
-    "astro build": "astro build",
-    "build:production": "bash deploy.sh"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "3.4.1",
-    "astro": ">=5.12.8",
-    "three": "^0.176.0"
-  },
-  "devDependencies": {
-    "astro": ">=5.12.8"
-  }
+    "name": "astro",
+    "type": "module",
+    "version": "0.0.15",
+    "scripts": {
+        "astro dev": "astro dev",
+        "astro build": "astro build",
+        "build:production": "bash deploy.sh"
+    },
+    "dependencies": {
+        "@astrojs/sitemap": "3.4.1",
+        "astro": ">=5.12.8",
+        "three": "^0.176.0"
+    }
 }
