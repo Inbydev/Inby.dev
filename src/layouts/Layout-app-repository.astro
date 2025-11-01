@@ -20,8 +20,7 @@ const { title, descriptive_title, description } = Astro.props;
         <meta name="author" content="Inbydev" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#896db7" />
-        <meta name="generator" content={Astro.generator} />
+        <meta name="theme-color" content="#180222" />
         <meta property="og:title" content={descriptive_title} />
         <meta property="og:description" content={description} />
         <link rel="sitemap" href="/sitemap-index.xml" />
@@ -32,11 +31,9 @@ const { title, descriptive_title, description } = Astro.props;
         <slot />
     </body>
 
-    <script
-        async
-        defer
-        src="https://tianji.inby.dev/tracker.js"
-        data-website-id="cm7a4ru9300018e1uty69qg1v"></script>
+    <script is:inline async defer
+    src="https://tianji.inby.dev/tracker.js"
+    data-website-id="cm7a4ru9300018e1uty69qg1v"></script>
 </html>
 
 <style is:global>
@@ -76,8 +73,8 @@ const { title, descriptive_title, description } = Astro.props;
         --color-link-bg: #6b46c1;
         --color-link-bg-hover: #5a3e9d;
         --hover: #ff0083;
-        --a-s: 0.5s;
-        --h-s: 0.3s;
-        --f-h-s: 0.2s;
+        --slow-hover: 0.5s;
+        --medium-hover: 0.3s;
+        --fast-hover: 0.2s;
     }
 </style>

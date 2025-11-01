@@ -13,7 +13,7 @@ const { href } = Astro.props;
         color: var(--tertiary-text);
         gap: 0.4rem;
         font-size: clamp(1.1rem, 3vw, 1.28rem);
-        transition: var(--f-h-s);
+        transition: var(--fast-hover);
         background: var(--background-header);
         border-radius: 1.6rem;
         padding: 0.4rem 0.6rem;
@@ -22,10 +22,10 @@ const { href } = Astro.props;
         -moz-box-shadow: 0 16px 20px -10px rgba(0, 0, 0, 0.6);
     }
 
-    .LinkButton .svg__link {
+    .LinkButton .svg_link {
         height: 1.8rem;
         aspect-ratio: 1;
-        transition: var(--f-h-s);
+        transition: var(--fast-hover);
         font-family: none;
     }
 

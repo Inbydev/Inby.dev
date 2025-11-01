@@ -1,7 +1,7 @@
 {
     "name": "astro",
     "type": "module",
-    "version": "0.0.15",
+    "version": "0.1.0",
     "scripts": {
         "astro dev": "astro dev",
         "astro build": "astro build",
@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@astrojs/sitemap": "3.4.1",
-        "astro": ">=5.12.8",
-        "three": "^0.176.0"
+        "astro": "5.15.3",
+        "three": "0.176.0"
     }
 }

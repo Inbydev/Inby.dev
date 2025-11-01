@@ -35,7 +35,7 @@ const TAGS = {
 const PROJECTS = [
     {
         title: "InNotesBy",
-        description: "Para crear Notas para acceso público con PHP",
+        description: "Crea Notas con acceso público",
         link: "https://inby.dev/InNotesBy/",
         github: "https://github.com/Inbydev/InNotesBy",
         image: first_screenshot,
@@ -66,11 +66,11 @@ const PROJECTS = [
             />
             <footer class="footer">
                 <LinkButton href={github}>
-                    <IcoGitHub class="svg__link" />
+                    <IcoGitHub class="svg_link" />
                     Ver código fuente
                 </LinkButton>
                 <LinkButton href={link}>
-                    <IcoWeb class="svg__link" />
+                    <IcoWeb class="svg_link" />
                     Ir al sitio web
                 </LinkButton>
             </footer>
@@ -89,11 +89,6 @@ const PROJECTS = [
         justify-content: center;
     }
 
-    .project__article > * {
-        margin: 0;
-        padding: 0;
-    }
-
     .project__article footer {
         background: transparent;
         display: flex;
@@ -101,25 +96,25 @@ const PROJECTS = [
         align-items: center;
         gap: 1rem;
     }
-    .project__article footer .svg__link {
+    .project__article footer .svg_link {
         height: 2.25rem;
         aspect-ratio: 1;
-        transition: var(--f-h-s);
+        transition: var(--fast-hover);
         font-family: none;
     }
-    .project__article footer .svg__link g {
-        transition: var(--f-h-s);
+    .project__article footer .svg_link g {
+        transition: var(--fast-hover);
     }
 
-    .project__article footer .svg__link g path {
-        transition: var(--f-h-s);
+    .project__article footer .svg_link g path {
+        transition: var(--fast-hover);
     }
 
     .project__article h3 {
         font-size: 2.4rem;
         display: flex;
         align-items: center;
-        transition: var(--h-s);
+        transition: var(--medium-hover);
         color: var(--secondary-text);
         text-align: left;
     }

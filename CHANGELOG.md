@@ -2,17 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+#### v0.1.0
+
+> 01 Nov 2025 04:43AM
+
+- Updated some names and descriptions on the index.astro page.
+- Updated some colors on the layout in general.
+- Added noise.webp for background using magick + webp lossless compression, now without pure css.
+- Finally updated to 0.1.0 version, yay.
+
 #### v0.0.15
 
 > 08 Aug 2025 05:09PM
 
-- Updated SchildiChat to the Inbydev app repository or downloads page
+- Updated SchildiChat to the Inbydev app repository or downloads page.
 
 #### v0.0.14
 
 > 08 Aug 2025 05:09PM
 
-- Added birday to the Inbydev app repository or downloads page
+- Added birday to the Inbydev app repository or downloads page.
 
 #### v0.0.13
 
